@@ -13,6 +13,11 @@
             <input id="email" name="email" type="email">
             <br>
             <br>
+            <p for="password">Passwort</p>
+            <br>
+            <input id="password" name="password" type="password">
+            <br>
+            <br>
             <input id="button" type="submit" value="Absenden"/>
         </div>
     </form>
