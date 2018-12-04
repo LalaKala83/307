@@ -69,10 +69,16 @@ p {
     min-width: 100%;
 }
 
-
+#button {
+    min-height: 20px;
+    min-width: 80px;
+    text-align: center;
+}
 
 #login {
-    margin: 5% 20% 20% 20%;
+    margin-top: 70px;
+    margin-left: 20%;
+    margin-right: 20%;
     min-width: 100px;
     min-height: 100px;
     background: white;

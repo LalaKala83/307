@@ -11,6 +11,9 @@
             <p for="email">E-Mail</p>
             <br>
             <input id="email" name="email" type="email">
+            <br>
+            <br>
+            <input id="button" type="submit" value="Absenden"/>
         </div>
     </form>
 </p>
