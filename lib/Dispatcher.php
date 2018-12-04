@@ -13,20 +13,18 @@ class Dispatcher
      */
     public static function dispatch()
     {
-        // Die URI wird aus dem $_SERVER Array ausgelesen und in ihre
-        //   Einzelteile zerlegt.
-        // /user/index/foo --> ['user', 'index', 'foo']
+        // Die URI wird aus dem $_SERVER Array ausgelesen und in ihre Einzelteile zerlegt.
         $uri = $_SERVER['REQUEST_URI'];
-        $uri = strtok($uri, '?'); // Erstes ? und alles danach abschneiden
-        $uri = trim($uri, '/'); // Alle / am anfang und am Ende der URI abschneiden
-        $uriFragments = explode('/', $uri); // In einzelteile zerlegen
+        $uri = strtok($uri, '?');
+        $uri = trim($uri, '/');
+        $uriFragments = explode('/', $uri);
 
         // Den Namen des gewünschten Controllers ermitteln
         $controllerName = 'DefaultController';
         if (!empty($uriFragments[0])) {
             $controllerName = $uriFragments[0];
-            $controllerName = ucfirst($controllerName); // Erstes Zeichen grossschreiben
-            $controllerName .= 'Controller'; // "Controller" anhängen
+            $controllerName = ucfirst($controllerName);
+            $controllerName .= 'Controller';
         }
 
         // Den Namen der auszuführenden Methode ermitteln
@@ -35,9 +33,9 @@ class Dispatcher
             $method = $uriFragments[1];
         }
 
+        // Den gewünschten Controller laden
+        // Falls der Controller nicht existiert, wird DefaultController angezeigt
         if(file_exists("../controller/$controllerName.php")){
-            // Den gewünschten Controller laden
-            //   Achtung! Hier stützt PHP ab, sollte der Controller nicht existieren*/
             require_once "../controller/$controllerName.php";
 
             // Eine neue Instanz des Controllers wird erstellt und die gewünschte
