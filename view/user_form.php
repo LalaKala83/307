@@ -1,5 +1,4 @@
 <p>
-    <link href="../public/css/style.css" rel="stylesheet">
     <h1>Registrierung</h1>
     <form class="form-horizontal" action="/user/save" method="post">
         <div data-html="true" id="login">

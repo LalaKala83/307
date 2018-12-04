@@ -6,12 +6,13 @@
  * Time: 11:47
  */
 
-class FormController
+class userController
 {
     public function index()
     {
         // Anfrage an die URI /user/create weiterleiten (HTTP 302)
         header('Location: /user/create');
+        exit();
     }
 
     public function create()
