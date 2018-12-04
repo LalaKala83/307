@@ -35,15 +35,24 @@ class Dispatcher
             $method = $uriFragments[1];
         }
 
-        $controllerName = "DefaultController";
-        $method = "index";
-        // Den gewünschten Controller laden
-        //   Achtung! Hier stützt PHP ab, sollte der Controller nicht existieren
-        require_once "../controller/$controllerName.php";
+        if(file_exists("../controller/$controllerName.php")){
+            // Den gewünschten Controller laden
+            //   Achtung! Hier stützt PHP ab, sollte der Controller nicht existieren*/
+            require_once "../controller/$controllerName.php";
 
-        // Eine neue Instanz des Controllers wird erstellt und die gewünschte
-        //   Methode darauf aufgerufen.
-        $controller = new $controllerName();
-        $controller->$method();
+            // Eine neue Instanz des Controllers wird erstellt und die gewünschte
+            //   Methode darauf aufgerufen.*/
+            $controller = new $controllerName();
+            $controller->$method();
+        }
+
+        else {
+            $controllerName = "DefaultController";
+            $method = "index";
+
+            require_once "../controller/$controllerName.php";
+            $controller = new $controllerName();
+            $controller->$method();
+        }
     }
 }
