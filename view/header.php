@@ -6,7 +6,7 @@
         <title><?= $title ?></title>
 
         <link href="https://fonts.googleapis.com/css?family=Nunito|PT+Serif" rel="stylesheet">
-        <link rel="stylesheet" href="./../public/css/style.css"  type="text/css">
+        <link rel="stylesheet" href="/css/style.css"  type="text/css">
 
     </head>
     <body>
