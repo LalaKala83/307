@@ -28,13 +28,11 @@ p {
 
 #header {
     width: 100%;
-    padding: 5px;
     background: darkred;
-    min-height: 20%;
+    min-height: 120px;
 }
 
 #body {
-    padding: 5px;
     width: 100%;
     min-height: 80%;
     background: aqua;
@@ -46,18 +44,26 @@ p {
     min-height: 90%;
     resize: both;
     min-width: 100%;
-    margin-bottom: 5px;
-    position: fixed;
-    top: 0;
+}
+
+#image {
+    width: 100%;
+    min-height: 100px;
+    background: green;
+}
+
+#content {
+    width: 70%;
+    margin-left: 15%;
+    margin-right: 15%;
+    background:white;
+    overflow-wrap: break-word;
+    padding: 5px;
 }
 
 #footer {
-    height: 8%;
-    min-height: 8%;
+    min-height: 100px;
     background: lightcoral;
     min-width: 100%;
-    padding: 5px;
-    position: fixed;
-    bottom: 0;
 }
 
