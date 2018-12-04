@@ -12,5 +12,4 @@
     <body>
         <div id="container">
         <div id="header"> <h1>Header</h1></div>
-        <div id="body"><h1>Body</h1>
 

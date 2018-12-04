@@ -1,6 +1,5 @@
-<p>
     <h1>Registrierung</h1>
-    <form class="form-horizontal" action="/user/save" method="post">
+    <form class="form-horizontal" action="../public/index.php/user/save" method="post">
         <div data-html="true" id="login">
             <p for="username">Benutzername</p>
             <br>
@@ -20,4 +19,3 @@
             <input id="button" type="submit" value="Absenden"/>
         </div>
     </form>
-</p>
