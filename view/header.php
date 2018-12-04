@@ -10,6 +10,6 @@
 
     </head>
     <body>
-        <div id="header"><h1>header</h1></div>
+        <div id="header"><h1>Hier wird das Menu stehen</h1></div>
         <div id="container">
 

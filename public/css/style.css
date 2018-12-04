@@ -29,18 +29,15 @@ p {
 
 #header {
     width: 100%;
-    background: darkred;
     min-height: 120px;
 }
 
 #body {
     width: 100%;
     min-height: 80%;
-    background: aqua;
 }
 
 #container {
-    background-color: green;
     height: 90%;
     min-height: 90%;
     resize: both;
@@ -50,21 +47,18 @@ p {
 #image {
     width: 100%;
     min-height: 100px;
-    background: green;
 }
 
 #content {
     width: 70%;
     margin-left: 15%;
     margin-right: 15%;
-    background:white;
     overflow-wrap: break-word;
     padding: 5px;
 }
 
 #footer {
     min-height: 100px;
-    background: lightcoral;
     min-width: 100%;
 }
 
@@ -84,4 +78,8 @@ p {
     text-align: center;
     vertical-align: middle;
     position: relative;
+}
+
+.searchbox {
+    width: 350px;
 }
