@@ -1,21 +1,23 @@
     <h1>Registrierung</h1>
-    <form class="form-horizontal" action="../public/index.php/user/save" method="post">
+    <form action="../public/index.php/user/save" method="post">
         <div data-html="true" id="login">
-            <p for="username">Benutzername</p>
+            <p>
+            <label for="username">Benutzername</label>
             <br>
             <input id="username" name="username" type="text">
             <br>
             <br>
-            <p for="email">E-Mail</p>
+            <label for="email">E-Mail</label>
             <br>
             <input id="email" name="email" type="email">
             <br>
             <br>
-            <p for="password">Passwort</p>
+            <label for="password">Passwort</label>
             <br>
             <input id="password" name="password" type="password">
             <br>
             <br>
             <input id="button" type="submit" value="Absenden"/>
+            </p>
         </div>
     </form>

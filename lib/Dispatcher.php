@@ -18,7 +18,6 @@ class Dispatcher
         $uri = strtok($uri, '?');
         $uri = trim($uri, '/');
         $uriFragments = explode('/', $uri);
-        echo $uri;
 
         // Den Namen des gewünschten Controllers ermitteln
         $controllerName = 'DefaultController';

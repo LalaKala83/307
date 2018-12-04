@@ -6,10 +6,9 @@
         <title><?= $title ?></title>
 
         <link href="https://fonts.googleapis.com/css?family=Nunito|PT+Serif" rel="stylesheet">
-        <link href="../public/css/style.css" rel="stylesheet">
+        <link rel="stylesheet" href="./../public/css/style.css"  type="text/css">
 
     </head>
     <body>
         <div id="container">
-        <div id="header"> <h1>Header</h1></div>
 

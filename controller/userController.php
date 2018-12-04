@@ -23,7 +23,7 @@ class userController
         $view->display();
     }
     public function save(){
-        require_once "../view/user_form.php";
+        /*require_once "../view/user_form.php";
         $email = _POST["email"];
         $username = _POST["username"];
         $password = _POST["password"];
@@ -32,6 +32,6 @@ class userController
         $view = new View('user_form');
         $view->title = 'Benutzer erstellen';
         $view->heading = 'Benutzer erstellen';
-        $view->display();
+        $view->display();*/
     }
 }
