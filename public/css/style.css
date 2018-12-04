@@ -26,10 +26,36 @@ p {
     font-family: 'PT Serif', serif;
 }
 
+#content {
+    background-color: orange;
+    min-height: 100px;
+}
+
 #header {
-    margin: 0;
-    padding: 5px;
-    height: 20%;
+    min-height: 100px;
     width: 100%;
+    padding: 5px;
     background: darkred;
 }
+
+#body {
+    padding: 5px;
+    width: 100%;
+    min-height: 600px;
+    background: aqua;
+}
+
+#container {
+    background-color: green;
+    height: 100%;
+    margin: 0 auto -50px auto;
+    min-width: 560px;
+}
+
+#footer {
+    min-height: 100px;
+    margin: 0 auto;
+    background: lightcoral;
+    padding: 5px;
+}
+
