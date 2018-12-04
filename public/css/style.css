@@ -22,6 +22,8 @@ h3 {
 
 p {
     font-size: 20px;
+    margin: 0;
+    padding: 0;
     color: black;
     font-family: 'PT Serif', serif;
 }
@@ -67,3 +69,14 @@ p {
     min-width: 100%;
 }
 
+
+
+#login {
+    margin: 5% 20% 20% 20%;
+    min-width: 100px;
+    min-height: 100px;
+    background: white;
+    text-align: center;
+    vertical-align: middle;
+    position: relative;
+}
