@@ -13,6 +13,9 @@ class userController
         // Anfrage an die URI /user/create weiterleiten (HTTP 302)
         header('Location: /user/create');
         exit();
+
+        header('Location: /user/save');
+        exit();
     }
 
     public function create()
@@ -23,15 +26,14 @@ class userController
         $view->display();
     }
     public function save(){
-        /*require_once "../view/user_form.php";
-        $email = _POST["email"];
-        $username = _POST["username"];
-        $password = _POST["password"];
-        echo $email . " " .$username. " ". $password;
+        $email = $_POST["email"];
+        $username = $_POST["username"];
+        $password = $_POST["password"];
 
-        $view = new View('user_form');
-        $view->title = 'Benutzer erstellen';
-        $view->heading = 'Benutzer erstellen';
-        $view->display();*/
+
+        $view = new View('user_successful_registration');
+        $view->title = 'Registrierung erfolgreich';
+        $view->heading = 'Registrierung erfolgreich';
+        $view->display();
     }
 }

@@ -1,5 +1,5 @@
     <h1>Registrierung</h1>
-    <form action="../public/index.php/user/save" method="post">
+    <form action="save" method="post">
         <div data-html="true" id="login">
             <p>
             <label for="username">Benutzername</label>
