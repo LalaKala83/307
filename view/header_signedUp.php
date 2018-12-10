@@ -18,7 +18,7 @@
     <div id="menueicon"><img src="/images/icon/menueicon.png" alt="Menü" onclick="showMenue()"/></div>
     <div id=menue>
         <ul>
-            <li><a href="/user/logout">Home</a></li>
+            <li><a href="/">Home</a></li>
             <li><a href="/experience/experience/">Entdecken</a></li>
             <li><a href="/entry/search/">Suchen</a></li>
             <li><a href="/profile/profile">Profil</a></li>
