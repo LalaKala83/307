@@ -8,6 +8,8 @@
 
 $isSignedIn = false;
 
+session_start();
+
 require_once '../lib/Dispatcher.php';
 require_once '../lib/view.php';
 

@@ -19,13 +19,22 @@ class userController
         exit();
     }
 
+    public function logout() {
+        $_SESSION["isSignedIn"] = false;
+        $view = new View('default_index');
+        $view->title = 'Startseite';
+        $view->heading = 'Startseite';
+        $view->display($_SESSION["isSignedIn"]);
+    }
+
+
     public function create()
     {
         global $isSignedIn;
         $view = new View('user_form');
         $view->title = 'Benutzer erstellen';
         $view->heading = 'Benutzer erstellen';
-        $view->display($isSignedIn);
+        $view->display($_SESSION["isSignedIn"]);
     }
     public function save(){
         global $isSignedIn;
@@ -33,11 +42,11 @@ class userController
         $username = $_POST["username"];
         $password = $_POST["password"];
 
-        $isSignedIn = true;
-
         $view = new View('profile');
         $view->title = 'Mein Profil';
         $view->heading = 'Mein Profil';
-        $view->display($isSignedIn);
+
+        $_SESSION["isSignedIn"] = true;
+        $view->display($_SESSION["isSignedIn"]);
     }
 }

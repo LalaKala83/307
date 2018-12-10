@@ -21,6 +21,6 @@ class experienceController
         $view = new View('experience');
         $view->title = 'Entdecken';
         $view->heading = 'Entdecken';
-        $view->display($isSignedIn);
+        $view->display($_SESSION["isSignedIn"]);
     }
 }
