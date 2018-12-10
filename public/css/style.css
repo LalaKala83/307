@@ -107,3 +107,45 @@ a {
 .type1:hover {
     background-color: #111;
 }
+
+@media screen and ( max-width: 580px){
+    #menue { display: none; }
+    #menueicon img{
+        display: inline;
+        background-color: #ffffff;
+        position: fixed;
+        right: 0;
+        z-index: 9;
+    }
+    #menueLittle {
+        text-align: center;
+        align-items: center;
+        align-content: center;
+        background-color: rgba(255,255,255,0.8);
+        background-size: cover;
+        z-index: 8;
+        position: fixed;
+        top: 10%;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        justify-content: center;
+    }
+    #menueLittle ul{
+        align-content: center;
+        text-align: center;
+        align-items: center;
+        background: black;
+
+    }
+    #menueLittle ul li{
+        text-align: center;
+        align-content: center;
+        width: auto;
+        float: none;
+    }
+    li a{
+        display: unset;
+    }
+
+}
