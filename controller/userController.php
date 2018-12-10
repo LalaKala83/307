@@ -42,6 +42,10 @@ class userController
         $username = $_POST["username"];
         $password = $_POST["password"];
 
+        require_once ("../repository/UserRepository.php");
+        $userRepository = new UserRepository();
+        $userRepository->create($username, $email, $password);
+
         $view = new View('profile');
         $view->title = 'Mein Profil';
         $view->heading = 'Mein Profil';
