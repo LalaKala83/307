@@ -11,8 +11,11 @@ class Dispatcher
      * Diese Methode wertet die Request URI aus leitet die Anfrage entsprechend
      * weiter.
      */
+
     public static function dispatch()
     {
+        global $isSignedIn;
+
         // Die URI wird aus dem $_SERVER Array ausgelesen und in ihre Einzelteile zerlegt.
         $uri = $_SERVER['REQUEST_URI'];
         $uri = strtok($uri, '?');
@@ -35,12 +38,31 @@ class Dispatcher
 
         // Den gewünschten Controller laden
         // Falls der Controller nicht existiert, wird DefaultController angezeigt
+        if ($isSignedIn){
         if(file_exists("../controller/$controllerName.php")){
             require_once "../controller/$controllerName.php";
 
             // Eine neue Instanz des Controllers wird erstellt und die gewünschte
             //   Methode darauf aufgerufen.*/
-            $controller = new $controllerName();
+            $controller = new $controllerName($isSignedIn);
+            $controller->$method();
+            }
+
+        else {
+            $controllerName = "DefaultController";
+            $method = "index";
+
+            require_once "../signedInController/$controllerName.php";
+            $controller = new $controllerName($isSignedIn);
+            $controller->$method();
+            }
+        }
+        else{        if(file_exists("../controller/$controllerName.php")){
+            require_once "../controller/$controllerName.php";
+
+            // Eine neue Instanz des Controllers wird erstellt und die gewünschte
+            //   Methode darauf aufgerufen.*/
+            $controller = new $controllerName($isSignedIn);
             $controller->$method();
         }
 
@@ -48,9 +70,11 @@ class Dispatcher
             $controllerName = "DefaultController";
             $method = "index";
 
-            require_once "../controller/$controllerName.php";
+            require_once "../signedInController/$controllerName.php";
             $controller = new $controllerName();
             $controller->$method();
+        }
+
         }
     }
 }

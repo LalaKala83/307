@@ -8,6 +8,8 @@
 
 class entryController
 {
+
+
     public function index()
     {
         // Anfrage an die URI /user/search weiterleiten (HTTP 302)
@@ -16,10 +18,11 @@ class entryController
     }
 
     public function search() {
+        global $isSignedIn;
             $view = new View('search');
             $view->title = 'Benutzer suchen';
             $view->heading = 'Benutzer suchen';
-            $view->display();
+            $view->display($isSignedIn);
     }
 
 }

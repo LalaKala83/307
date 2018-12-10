@@ -30,11 +30,20 @@ class View{
         }
     }
 
-    public function display()
+
+    public function display($isSignedIn)
     {
-        extract($this->properties);
-        require '../view/header.php';
-        require $this->viewfile;
-        require '../view/footer.php';
+        if ($isSignedIn) {
+            extract($this->properties);
+            require '../view/header_signedUp.php';
+            require $this->viewfile;
+            require '../view/footer.php';
+        } else {
+            extract($this->properties);
+            require '../view/header.php';
+            require $this->viewfile;
+            require '../view/footer.php';
+        }
+
     }
 }
