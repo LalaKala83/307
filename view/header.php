@@ -10,6 +10,15 @@
 
     </head>
     <body>
-        <div id="header"><h1>Hier wird das Menu stehen</h1></div>
+    <div id=header>
+        <ul>
+            <li><a href="default.asp">Home</a></li>
+            <li><a href="news.asp">Entdecken</a></li>
+            <li><a href="contact.asp">Suchen</a></li>
+            <li><a href="about.asp">Profil</a></li>
+        </ul>
+        <img class="picture" src="/public/images/a.jpg">
+
+    </div>
         <div id="container">
 

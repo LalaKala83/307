@@ -1,85 +1,70 @@
-h1 {
-    text-align: center;
-    font-size: 32px;
-    color: black;
-    font-family: 'Nunito', sans-serif;
+html {
+    background: #fff;
 }
 
-h2 {
-    text-align: center;
-    font-size: 28px;
-    color: black;
-    font-family: 'Nunito', sans-serif;
-}
-
-h3 {
-    font-size: 24px;
-    color: black;
-    font-family: 'Nunito', sans-serif;
-}
-
-
-p {
-    font-size: 20px;
-    margin: 0;
-    padding: 0;
-    color: black;
-    font-family: 'PT Serif', serif;
+body {
+    background: #fff;
+    color: #545454;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 0 auto;
+    max-width: 800px;
+    padding: 1em 4em;
 }
 
 #header {
-    width: 100%;
-    min-height: 120px;
-}
-
-#body {
-    width: 100%;
-    min-height: 80%;
-}
-
-#container {
-    height: 90%;
-    min-height: 90%;
-    resize: both;
-    min-width: 100%;
-}
-
-#image {
-    width: 100%;
-    min-height: 100px;
+    background: #FFF;
+    display:block;
+    overflow:auto;
+    padding: 1px;
 }
 
 #content {
-    width: 70%;
-    margin-left: 15%;
-    margin-right: 15%;
-    overflow-wrap: break-word;
-    padding: 5px;
+    background: #FFF;
+    min-height: 500px;
+    padding: 1px;
 }
 
 #footer {
+    background:	#FFF;
     min-height: 100px;
-    min-width: 100%;
+    max-height: 100px;
 }
 
-#button {
-    min-height: 20px;
-    min-width: 80px;
+h1 {
     text-align: center;
+    font-family: sans-serif;
 }
 
-#login {
-    margin-top: 70px;
-    margin-left: 20%;
-    margin-right: 20%;
-    min-width: 100px;
-    min-height: 100px;
-    background: white;
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+li {
+    float: left;
+    width: 25%;
+}
+
+li a {
+    display: block;
+    color: white;
     text-align: center;
-    vertical-align: middle;
-    position: relative;
+    padding: 14px 16px;
+    text-decoration: none;
 }
 
-.searchbox {
-    width: 350px;
+/* Change the link color to #111 (black) on hover */
+li a:hover {
+    background-color: #111;
+}
+
+.picture {
+    margin: 0px;
+    max-width: 100%;
+    max-height: 100%;
 }
