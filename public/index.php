@@ -6,8 +6,11 @@
  * Time: 11:03
  */
 
+$isSignedIn = false;
+
 require_once '../lib/Dispatcher.php';
 require_once '../lib/view.php';
+
 
 $dispatcher = new Dispatcher();
 $dispatcher->dispatch();

@@ -8,6 +8,7 @@
 
 class experienceController
 {
+
     public function index()
     {
         // Anfrage an die URI /user/search weiterleiten (HTTP 302)
@@ -16,9 +17,10 @@ class experienceController
     }
 
     public function experience() {
+        global $isSignedIn;
         $view = new View('experience');
         $view->title = 'Entdecken';
         $view->heading = 'Entdecken';
-        $view->display();
+        $view->display($isSignedIn);
     }
 }

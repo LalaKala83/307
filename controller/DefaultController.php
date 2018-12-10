@@ -8,12 +8,13 @@
 
 class DefaultController
 {
+
     public function index()
     {
+        global $isSignedIn;
         $view = new View('default_index');
         $view->title = 'Startseite';
         $view->heading = 'Startseite';
-        $view->display();
+        $view->display($isSignedIn);
     }
-
 }
