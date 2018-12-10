@@ -15,7 +15,7 @@
             <li><a href="">Home</a></li>
             <li><a href="/experience/experience/">Entdecken</a></li>
             <li><a href="/entry/search/">Suchen</a></li>
-            <li><a href="about.asp">Profil</a></li>
+            <li><a href="/user/create">Profil</a></li>
         </ul>
 
     </div>
