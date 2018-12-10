@@ -34,8 +34,6 @@ class View{
     {
         extract($this->properties);
         require '../view/header.php';
-
-        require '../view/signUp.php';
         require $this->viewfile;
         require '../view/footer.php';
     }

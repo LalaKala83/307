@@ -31,9 +31,9 @@ class userController
         $password = $_POST["password"];
 
 
-        $view = new View('user_successful_registration');
-        $view->title = 'Registrierung erfolgreich';
-        $view->heading = 'Registrierung erfolgreich';
+        $view = new View('profile');
+        $view->title = 'Mein Profil';
+        $view->heading = 'Mein Profil';
         $view->display();
     }
 }
