@@ -18,7 +18,7 @@
     <div id="menueicon"><img src="/images/icon/menueicon.png" alt="Menü" onclick="showMenue()"/></div>
     <div id=menue>
         <ul>
-            <li><a href="/user/create">Home</a></li>
+            <li><a href="/">Home</a></li>
             <li><a href="/experience/experience/">Entdecken</a></li>
             <li><a href="/entry/search/">Suchen</a></li>
             <li><a href="/user/login">Profil</a></li>
@@ -26,7 +26,7 @@
     </div>
     <div id="menueLittle">
         <ul>
-            <li><a href="/user/create">Home</a></li>
+            <li><a href="/>Home</a></li>
             <li><a href="/experience/experience/">Entdecken</a></li>
             <li><a href="/entry/search/">Suchen</a></li>
             <li><a href="/user/login">Profil</a></li>
