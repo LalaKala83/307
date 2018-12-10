@@ -2,11 +2,39 @@ html {
     background: #fff;
 }
 
+.picture {
+    margin: 0px;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.searchbox {
+    width: 350px;
+}
+
+.boxRound {
+    border-sizing: border-box;
+    width: content-box;
+    border-radius: 3px 15px 3px 15px;
+    background-color: #333;
+}
+
+.type1 {
+    font-size: 20px;
+    font-family: sans-serif;
+    padding: 10px;
+    margin-right: 70px;
+    margin-top: 15px;
+    display: inline-block;
+    float: right;
+}
+
+.type1:hover {
+    background-color: #111;
+}
+
 #page {
     background: #fff;
-    color: #545454;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 16px;
     line-height: 1.5;
     margin: 0 auto;
     max-width: 800px;
@@ -14,18 +42,11 @@ html {
     min-width:500px;
 }
 
-#menue {
-    background: #FFF;
-    display:block;
-    overflow:auto;
-    padding: 1px;
-}
-#menueLittle { display: none; }
 #content {
-    background: #FFF;
-    min-height: 500px;
-    padding: 1px;
-}
+     background: #FFF;
+     min-height: 500px;
+     padding: 1px;
+ }
 
 #footer {
     background:	#FFF;
@@ -33,13 +54,11 @@ html {
     max-height: 100px;
 }
 
-#menueicon img {
-    display: none;
-    height: 40px;
-}
-h1 {
-    text-align: center;
-    font-family: sans-serif;
+#menue {
+    background: #FFF;
+    display:block;
+    overflow:auto;
+    padding: 1px;
 }
 
 #menue ul {
@@ -68,46 +87,32 @@ h1 {
     background-color: #111;
 }
 
-.picture {
-    margin: 0px;
-    max-width: 100%;
-    max-height: 100%;
+#menueLittle { display: none; }
+
+#menueicon img {
+    display: none;
+    height: 40px;
+}
+
+h1 {
+    text-align: center;
+    font-family: 'Nunito', sans-serif;
+}
+
+p {
+    color: #545454;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 16px;
 }
 
 form {
     text-align: center;
 }
 
-.searchbox {
-    width: 350px;
-}
-
-
 a {
     text-decoration: none;
     text-align: center;
     color: white;
-}
-
-.boxRound {
-    border-sizing: border-box;
-    width: content-box;
-    border-radius: 3px 15px 3px 15px;
-    background-color: #333;
-}
-
-.type1 {
-    font-size: 20px;
-    font-family: sans-serif;
-    padding: 10px;
-    margin-right: 70px;
-    margin-top: 15px;
-    display: inline-block;
-    float: right;
-}
-
-.type1:hover {
-    background-color: #111;
 }
 
 @media screen and ( max-width: 1250px){
@@ -162,6 +167,25 @@ a {
     }
     .type1{
         display:none;
+
+
+    }
+}
+@media screen and (max-width: 630px){
+    #page {
+        background: #fff;
+        max-width: unset;
+        padding: unset;
+        min-width: unset;
+    }
+    p {
+        font-size: 10px;
+    }
+    #content {
+        background: #FFF;
+        min-height: 288px;
+        padding: 1px;
     }
 
 }
+
