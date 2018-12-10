@@ -14,13 +14,13 @@ body {
     min-width:500px;
 }
 
-#header {
+#menue {
     background: #FFF;
     display:block;
     overflow:auto;
     padding: 1px;
 }
-
+#menueLittle { display: none; }
 #content {
     background: #FFF;
     min-height: 500px;
@@ -33,6 +33,10 @@ body {
     max-height: 100px;
 }
 
+#menueicon img {
+    display: none;
+    height: 40px;
+}
 h1 {
     text-align: center;
     font-family: sans-serif;
