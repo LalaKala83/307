@@ -11,7 +11,7 @@
 
     </head>
     <body>
-    <div class="circleBase type1">
+    <div class="boxRound type1">
         <a href="/user/create">Anmelden</a>
     </div>
     <div id="page">
@@ -30,6 +30,7 @@
             <li><a href="/experience/experience/">Entdecken</a></li>
             <li><a href="/entry/search/">Suchen</a></li>
             <li><a href="/user/create">Profil</a></li>
+            <li><a href="/user/create">Anmelden</a></li>
         </ul>
     </div>
         <div id="content">
