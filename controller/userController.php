@@ -17,8 +17,30 @@ class userController
 
         header('Location: /user/save');
         exit();
+
+        header('Location: /user/login');
+        exit();
+
+        header('Location: /user/authenticate');
+        exit();
     }
 
+    public function login(){
+        $_SESSION["isSignedIn"] = false;
+        $view = new View('user_login');
+        $view->title = 'Login';
+        $view->heading = 'Login';
+        $view->display($_SESSION["isSignedIn"]);
+
+    }
+
+    public function authenticate(){
+        $username = $_POST["username"];
+        $password = $_POST["password"];
+
+
+        password_verify($password, )
+    }
     public function logout() {
         $_SESSION["isSignedIn"] = false;
         $view = new View('default_index');
@@ -31,7 +53,7 @@ class userController
     public function create()
     {
         global $isSignedIn;
-        $view = new View('user_form');
+        $view = new View('user_register');
         $view->title = 'Benutzer erstellen';
         $view->heading = 'Benutzer erstellen';
         $view->display($_SESSION["isSignedIn"]);
