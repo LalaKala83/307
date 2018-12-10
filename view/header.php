@@ -12,10 +12,10 @@
     <body>
     <div id=header>
         <ul>
-            <li><a href="">Home</a></li>
-            <li><a href="news.asp">Entdecken</a></li>
+            <li><a href="/">Home</a></li>
+            <li><a href="">Entdecken</a></li>
             <li><a href="/entry/search/">Suchen</a></li>
-            <li><a href="about.asp">Profil</a></li>
+            <li><a href="/user/create">Profil</a></li>
         </ul>
 
     </div>
