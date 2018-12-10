@@ -82,8 +82,28 @@ form {
     width: 350px;
 }
 
-#signUp {
-    margin-left: 10px;
+
+a {
+    text-decoration: none;
+    text-align: center;
+    color: white;
+}
+
+.circleBase {
+    border-radius: 50%;
+}
+
+.type1 {
+    font-size: 20px;
+    font-family: sans-serif;
+    padding: 10px;
+    margin-right: 70px;
+    margin-top: 15px;
     display: inline-block;
     float: right;
+    background-color: #333;
+}
+
+.type1:hover {
+    background-color: #111;
 }
