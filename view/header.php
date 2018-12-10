@@ -11,6 +11,10 @@
 
     </head>
     <body>
+    <div id="signUp">
+        <p> signUp </p>
+    </div>
+    <div id="page">
     <div id="menueicon"><img src="/images/icon/menueicon.png" alt="Menü" onclick="showMenue()"/></div>
     <div id=menue>
         <ul>
