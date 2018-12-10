@@ -38,13 +38,13 @@ class Dispatcher
 
         // Den gewünschten Controller laden
         // Falls der Controller nicht existiert, wird DefaultController angezeigt
-        if ($isSignedIn){
+        if ($_SESSION["isSignedIn"]){
         if(file_exists("../controller/$controllerName.php")){
             require_once "../controller/$controllerName.php";
 
             // Eine neue Instanz des Controllers wird erstellt und die gewünschte
             //   Methode darauf aufgerufen.*/
-            $controller = new $controllerName($isSignedIn);
+            $controller = new $controllerName($_SESSION["isSignedIn"]);
             $controller->$method();
             }
 
@@ -52,8 +52,8 @@ class Dispatcher
             $controllerName = "DefaultController";
             $method = "index";
 
-            require_once "../signedInController/$controllerName.php";
-            $controller = new $controllerName($isSignedIn);
+            require_once "../controller/$controllerName.php";
+            $controller = new $controllerName($_SESSION["isSignedIn"]);
             $controller->$method();
             }
         }
@@ -62,7 +62,7 @@ class Dispatcher
 
             // Eine neue Instanz des Controllers wird erstellt und die gewünschte
             //   Methode darauf aufgerufen.*/
-            $controller = new $controllerName($isSignedIn);
+            $controller = new $controllerName($_SESSION["isSignedIn"]);
             $controller->$method();
         }
 

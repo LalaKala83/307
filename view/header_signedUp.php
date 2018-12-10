@@ -11,6 +11,9 @@
 
 </head>
 <body>
+<div class="boxRound type1">
+    <a href="/user/logout">Abmelden</a>
+</div>
 <div id="page">
     <div id="menueicon"><img src="/images/icon/menueicon.png" alt="Menü" onclick="showMenue()"/></div>
     <div id=menue>
@@ -18,7 +21,7 @@
             <li><a href="/">Home</a></li>
             <li><a href="/experience/experience/">Entdecken</a></li>
             <li><a href="/entry/search/">Suchen</a></li>
-            <li><a href="/user/create">Profil</a></li>
+            <li><a href="/profile/profile">Profil</a></li>
         </ul>
     </div>
     <div id="menueLittle">
@@ -26,7 +29,7 @@
             <li><a href="/">Home</a></li>
             <li><a href="/experience/experience/">Entdecken</a></li>
             <li><a href="/entry/search/">Suchen</a></li>
-            <li><a href="/user/create">Profil</a></li>
+            <li><a href="/profile/profile">Profil</a></li>
+            <li><a href="/">Abmelden</a></li>
         </ul>
     </div>
-    <div id="content">

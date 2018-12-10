@@ -22,7 +22,7 @@ class entryController
             $view = new View('search');
             $view->title = 'Benutzer suchen';
             $view->heading = 'Benutzer suchen';
-            $view->display($isSignedIn);
+            $view->display($_SESSION["isSignedIn"]);
     }
 
 }
