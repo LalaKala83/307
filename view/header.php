@@ -13,7 +13,7 @@
     <div id=header>
         <ul>
             <li><a href="">Home</a></li>
-            <li><a href="news.asp">Entdecken</a></li>
+            <li><a href="/experience/experience/">Entdecken</a></li>
             <li><a href="/entry/search/">Suchen</a></li>
             <li><a href="about.asp">Profil</a></li>
         </ul>
