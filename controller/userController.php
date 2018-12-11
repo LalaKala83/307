@@ -17,10 +17,49 @@ class userController
 
         header('Location: /user/save');
         exit();
+
+        header('Location: /user/login');
+        exit();
+
+        header('Location: /user/authenticate');
+        exit();
     }
 
+    public function login(){
+        $_SESSION["isSignedIn"] = null;
+        $view = new View('user_login');
+        $view->title = 'Login';
+        $view->heading = 'Login';
+        $view->display($_SESSION["isSignedIn"]);
+
+    }
+
+    public function authenticate(){
+        $username = $_POST["username"];
+        $password = $_POST["password"];
+
+        require_once ("../repository/UserRepository.php");
+        $userrepo = new UserRepository();
+        $username = $userrepo->verify($username, $password);
+        if($username != null) {
+            $_SESSION["isSignedIn"] = $username;
+            $view = new View('profile');
+            $view->title = 'Mein Profil';
+            $view->heading = 'Mein Profil';
+            $view->username = htmlspecialchars($username);
+            $view->display($_SESSION["isSignedIn"]);
+        }
+        else {
+            $_SESSION["isSignedIn"] = null;
+            $view = new View('user_login');
+            $view->title = 'Login';
+            $view->heading = 'Login';
+            $view->display($_SESSION["isSignedIn"]);
+
+        }
+    }
     public function logout() {
-        $_SESSION["isSignedIn"] = false;
+        $_SESSION["isSignedIn"] = null;
         $view = new View('default_index');
         $view->title = 'Startseite';
         $view->heading = 'Startseite';
@@ -31,7 +70,7 @@ class userController
     public function create()
     {
         global $isSignedIn;
-        $view = new View('user_form');
+        $view = new View('user_register');
         $view->title = 'Benutzer erstellen';
         $view->heading = 'Benutzer erstellen';
         $view->display($_SESSION["isSignedIn"]);
@@ -50,7 +89,8 @@ class userController
         $view->title = 'Mein Profil';
         $view->heading = 'Mein Profil';
 
-        $_SESSION["isSignedIn"] = true;
+        $_SESSION["isSignedIn"] = htmlspecialchars($username);
+        $view->username = $username;
         $view->display($_SESSION["isSignedIn"]);
     }
 }

@@ -1,4 +1,4 @@
-    <h1>Registrierung</h1>
+    <h1><?= title?></h1>
     <form action="save" method="post">
         <div data-html="true" id="login">
             <p>

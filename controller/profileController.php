@@ -12,6 +12,7 @@ class profileController
         $view = new View('profile');
         $view->title = 'Mein Profil';
         $view->heading = 'Mein Profil';
+        $view->username = $_SESSION["isSignedIn"];
         $view->display($_SESSION["isSignedIn"]);
     }
 }

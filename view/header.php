@@ -23,7 +23,7 @@
             <li><a href="/">Home</a></li>
             <li><a href="/experience/experience/">Entdecken</a></li>
             <li><a href="/entry/search/">Suchen</a></li>
-            <li><a href="/user/create">Profil</a></li>
+            <li><a href="/user/login">Profil</a></li>
         </ul>
     </div>
     <div id="menueLittle">
@@ -31,8 +31,8 @@
             <li><a href="/>Home</a></li>
             <li><a href="/experience/experience/">Entdecken</a></li>
             <li><a href="/entry/search/">Suchen</a></li>
-            <li><a href="/user/create">Profil</a></li>
-            <li><a href="/user/create">Anmelden</a></li>
+            <li><a href="/user/login">Profil</a></li>
+            <li><a href="/user/login">Anmelden</a></li>
         </ul>
     </div>
         <div id="content">
