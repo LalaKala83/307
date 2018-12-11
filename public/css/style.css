@@ -226,9 +226,26 @@ a {
     }
 }
 
+@media screen and (max-width: 418px){
+
+    div#usernameAndPassword {
+        float: unset;
+        margin-left: 0px;
+        min-height: 20px;
+        margin-top: 180px;
+        width: 150px;
+    }
+
+    div#createNewBlog {
+        margin-top: 10px;
+        display: block;
+        min-height: 20px;
+        width: 200px;
+    }
+}
+
 #containerProfilepicture {
     border:1px solid black;
-    margin-left: 70px;
     height: 140px;
     width: 140px;
     display: inline-block;
@@ -252,8 +269,8 @@ a {
 
 #usernameAndPassword {
     float: left;
-    margin-left: 70px;
-    height: 120px;
+    margin-left: 90px;
+    min-height: 20px;
     width: 150px;
 }
 
@@ -298,5 +315,19 @@ a {
     margin-top: 10px;
     width: 100%;
     min-height: 200px;
+    border:1px solid black;
+}
+
+#createNewBlog {
+    margin-top: 250px;
+    display: block;
+    min-height: 20px;
+    width: 200px;
+}
+
+#blogbox {
+    margin-top: 10px;
+    width: 100%;
+    min-height: 400px;
     border:1px solid black;
 }

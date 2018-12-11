@@ -12,4 +12,10 @@
         <h2><?= $username?></h2>
         <button id="buttonChangePassword">Passwort ändern</button>
     </div>
+    <div id="createNewBlog">
+        <button id="buttonChangePassword">Neuen Beitrag erfassen</button>
+    </div>
+    <div id="blogbox">
+
+    </div>
 </div>
