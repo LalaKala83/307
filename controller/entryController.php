@@ -18,11 +18,19 @@ class entryController
     }
 
     public function search() {
-        global $isSignedIn;
             $view = new View('search');
             $view->title = 'Benutzer suchen';
             $view->heading = 'Benutzer suchen';
             $view->display($_SESSION["isSignedIn"]);
     }
+
+    public function find() {
+        echo "hallo";
+        $view = new View('search');
+        $view->title = 'Benutzer suchen';
+        $view->heading = 'Benutzer suchen';
+        $view->display($_SESSION["isSignedIn"]);
+    }
+
 
 }
