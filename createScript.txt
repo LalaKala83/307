@@ -1,0 +1,27 @@
+use travelgram;
+CREATE TABLE benutzer (
+    benutzername varchar(255) not null primary key,
+    passwort varchar(255) not null,
+    email varchar(255) not null,
+    profilbild varchar(255)
+);
+
+
+
+CREATE TABLE beitrag (
+	id int NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    titel varchar(255) not null,
+    inhalt mediumtext not null,
+    kontinent varchar(255),
+    bild varchar(255)
+);
+
+
+use travelgram;
+create table beitrag_user (
+    fk_uname varchar(255) not null,
+    fk_bid int not null,
+    primary key(fk_uname, fk_bid),
+    FOREIGN key (fk_uname) REFERENCES benutzer (benutzername) on delete CASCADE,
+    FOREIGN key (fk_bid) REFERENCES beitrag (id) on delete CASCADE
+);
