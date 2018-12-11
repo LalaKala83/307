@@ -31,7 +31,7 @@ class Repository
         // Datenbankverbindung anfordern und, das Query "preparen" (vorbereiten)
         // und die Parameter "binden"
         $statement = ConnectionHandler::getConnection()->prepare($query);
-        $statement->bind_param('i', $id);
+        $statement->bind_param('s', $id);
         // Das Statement absetzen
         $statement->execute();
         // Resultat der Abfrage holen
