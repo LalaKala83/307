@@ -3,12 +3,12 @@
 </div>
 <div id="body">
     <h1><?= $title ?></h1>
-    <form action="createTheBlog" method="post">
+    <form action="/profileBlog/createTheBlog" method="post">
         <div>
             <p>
             <label for="title" class="form">Titel</label>
             <br>
-            <input id="formInputFields" class="form" name="username" type="text">
+            <input id="formInputFields" class="form" name="title" type="text">
             <br>
             <br>
             <label for="tags" class="form">Tags</label>
@@ -17,12 +17,12 @@
                     <option value="Andere">Andere</option>
                     <option value="Nordamerika">Nordamerika</option>
                     <option value="Südamerika">Südamerika</option>
-                    <option value="Südamerika">Afrika</option>
-                    <option value="Südamerika">Europa</option>
-                    <option value="Südamerika">Asien</option>
-                    <option value="Südamerika">Australien</option>
-                    <option value="Südamerika">Antarktis</option>
-                    <option value="Südamerika">Ozeanien</option>
+                    <option value="Afrika">Afrika</option>
+                    <option value="Europa">Europa</option>
+                    <option value="Asien">Asien</option>
+                    <option value="Australien">Australien</option>
+                    <option value="Antarktis">Antarktis</option>
+                    <option value="Ozeanien">Ozeanien</option>
                 </select>
                 <br>
                 <br>
@@ -35,6 +35,7 @@
             <br>
                 <textarea name="blog" class="form" id="textarea"></textarea>
             <br>
+            <a href="/profile/profile" id="buttonCancelBlog">Abbrechen</a>
             <input id="buttonCreateBlog" type="submit" value="Beitrag erfassen"/>
             </p>
         </div>

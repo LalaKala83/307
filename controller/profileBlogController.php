@@ -6,7 +6,7 @@
  * Time: 10:53
  */
 
-class createBlogController
+class profileBlogController
 {
     public function createBlog()
     {
@@ -23,5 +23,19 @@ class createBlogController
             $view->heading = 'Login';
             $view->display($_SESSION["isSignedIn"]);
         }
+    }
+
+    public function createTheBlog()
+    {
+        $title = $_POST["title"];
+        $tag = $_POST["tags"];
+        $picture = $_POST["fileToUpload"];
+        $textarea = $_POST["blog"];
+
+        $view = new View('profile');
+        $view->title = 'Mein Profil';
+        $view->heading = 'Mein Profil';
+        $view->username = $_SESSION["isSignedIn"];
+        $view->display($_SESSION["isSignedIn"]);
     }
 }

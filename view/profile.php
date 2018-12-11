@@ -13,7 +13,7 @@
         <button class="buttonChangePassword">Passwort ändern</button>
     </div>
     <div id="createNewBlog">
-        <a href="/createBlog/createBlog" class="buttonChangePassword">Neuen Beitrag erfassen</a>
+        <a href="/profileBlog/createBlog" class="buttonChangePassword">Neuen Beitrag erfassen</a>
     </div>
     <div id="blogbox">
 
