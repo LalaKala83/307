@@ -34,12 +34,11 @@ class profileBlogController
 
         require_once ("../repository/BlogRepository.php");
         $blogRepository = new BlogRepository();
-        $blogRepository->create($title, $tag, $image, $text);
+        $id = $blogRepository->create($title, $tag, $image, $text);
+        $blogRepository->setInBetweenTable($id, $_SESSION["isSignedIn"]);
 
-        $view = new View('profile');
-        $view->title = 'Mein Profil';
-        $view->heading = 'Mein Profil';
-        $view->username = $_SESSION["isSignedIn"];
-        $view->display($_SESSION["isSignedIn"]);
+        require_once ("profileController.php");
+        $profilcontroller = new profileController();
+        $profilcontroller->index();
     }
 }
