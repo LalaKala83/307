@@ -1,5 +1,6 @@
 html {
     background: #fff;
+    font-family: 'Noto Serif TC', serif;
 }
 
 .picture {
@@ -17,6 +18,10 @@ html {
     width: content-box;
     border-radius: 3px 15px 3px 15px;
     background-color: #333;
+}
+
+button {
+    font-family: 'Noto Serif TC', serif;
 }
 
 .type1 {
@@ -57,7 +62,6 @@ html {
     width: 100%;
     float:left;
     bottom: 0;
-    position: fixed;
 }
 
 #footer > p {
@@ -107,13 +111,17 @@ html {
 
 h1 {
     text-align: center;
-    font-family: 'Nunito', sans-serif;
+    font-family: 'Amatic SC', cursive;
+}
+
+h2 {
+    font-family: 'Amatic SC', cursive;
 }
 
 p {
     color: #545454;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 16px;
+    font-family: 'Noto Serif TC', serif;
 }
 
 form {
@@ -124,6 +132,7 @@ a {
     text-decoration: none;
     text-align: center;
     color: white;
+    font-family: 'Noto Serif TC', serif;
 }
 
 @media screen and ( max-width: 1250px){
@@ -165,6 +174,8 @@ a {
         margin: 20px;
     }
 
+
+
     #menueLittle li a{
         color: #333333;
         font-size: 20px;
@@ -173,8 +184,8 @@ a {
         text-decoration: none;
     }
 
-    #menueLittle li a :hover{
-        background-color: #111;
+    #menueLittle ul li:hover{
+        background-color: lightgray;
     }
     .type1{
         display:none;
@@ -201,6 +212,17 @@ a {
         background: #FFF;
         min-height: 288px;
         padding: 1px;
+    }
+
+    div.divExperience {
+        width: 45%;
+        margin-left: 2.5%;
+        margin-right: 2.5%;
+        margin-bottom: 20px;
+    }
+
+    .searchbox {
+        width: 180px;
     }
 }
 
