@@ -16,9 +16,10 @@ class EntryRepository extends Repository
     public function readById($id)
     {
         // Query erstellen
-        $query = "SELECT * FROM {$this->tableName} WHERE titel = ?";
+        $query = "SELECT * FROM {$this->tableName} WHERE titel LIKE ?";
         // Datenbankverbindung anfordern und, das Query "preparen" (vorbereiten)
         // und die Parameter "binden"
+        $id = '%' . $id .'%';
         $statement = ConnectionHandler::getConnection()->prepare($query);
         $statement->bind_param('s', $id);
         // Das Statement absetzen
@@ -28,7 +29,11 @@ class EntryRepository extends Repository
         if (!$result) {
             throw new Exception($statement->error);
         }
+        $rows = array();
+        while ($row = $result->fetch_object()) {
+            $rows[] = $row;
+        }
         // Den gefundenen Datensatz zurückgeben
-        return $result;
+        return $rows;
     }
 }

@@ -8,8 +8,6 @@
 
 class entryController
 {
-
-
     public function index()
     {
         // Anfrage an die URI /user/search weiterleiten (HTTP 302)
@@ -19,21 +17,40 @@ class entryController
 
     public function search() {
             $view = new View('search');
-            $view->title = 'Benutzer suchen';
-            $view->heading = 'Benutzer suchen';
+            $view->title = 'Eintrag suchen';
+            $view->heading = 'Eintrag suchen';
             $view->display($_SESSION["isSignedIn"]);
     }
 
-    public function find() {
-        $title = $_POST["title"];
+    public function show(){
+        $uri = $_SERVER['REQUEST_URI'];
+        $uri = strtok($uri, '?');
+        $uri = trim($uri, '/');
+        $uriFragments = explode('/', $uri);
+
+        $important = end($uriFragments);
+        require_once ("../repository/EntryRepository.php");
         $entryRepo = new EntryRepository();
-        $result =  $entryRepo->readById($title);
-        $view = new View('search');
-        $view->title = 'Benutzer suchen';
-        $view->heading = 'Benutzer suchen';
-        
+        $result =  $entryRepo->readById($important);
+
+        $view = new View('entry_alone');
+        $view->title = $important;
+        $view->heading = $important;
+        $view->result = $important;
         $view->display($_SESSION["isSignedIn"]);
+
     }
 
+    public function find() {
+        $title = $_POST['title'];
+        require_once ("../repository/EntryRepository.php");
+        $entryRepo = new EntryRepository();
+        $result =  $entryRepo->readById($title);
 
+        $view = new View('entry_found');
+        $view->title = 'Gefundene Einträge';
+        $view->heading = 'Gefundene Einträge';
+        $view->result = $result;
+        $view->display($_SESSION["isSignedIn"]);
+    }
 }

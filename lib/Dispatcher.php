@@ -14,8 +14,6 @@ class Dispatcher
 
     public static function dispatch()
     {
-        global $isSignedIn;
-
         // Die URI wird aus dem $_SERVER Array ausgelesen und in ihre Einzelteile zerlegt.
         $uri = $_SERVER['REQUEST_URI'];
         $uri = strtok($uri, '?');

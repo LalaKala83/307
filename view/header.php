@@ -22,7 +22,7 @@
         <ul>
             <li><a href="/">Home</a></li>
             <li><a href="/experience/experience/">Entdecken</a></li>
-            <li><a href="/user/search/">Suchen</a></li>
+            <li><a href="/entry/search/">Suchen</a></li>
             <li><a href="/user/login">Profil</a></li>
         </ul>
     </div>
@@ -30,7 +30,7 @@
         <ul>
             <li><a href="/">Home</a></li>
             <li><a href="/experience/experience/">Entdecken</a></li>
-            <li><a href="/user/search/">Suchen</a></li>
+            <li><a href="/entry/search/">Suchen</a></li>
             <li><a href="/user/login">Profil</a></li>
             <li><a href="/user/login">Anmelden</a></li>
         </ul>

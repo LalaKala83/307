@@ -41,7 +41,7 @@ class UserRepository extends Repository
     public function verify($passwort, $username){
 
         // Query erstellen
-        $query = "SELECT passwort FROM {$this->tableName} WHERE benutzername = ?";
+        $query = "SELECT passwort FROM {$this->tableName} WHERE benutzername LIKE ?";
         // Datenbankverbindung anfordern und, das Query "preparen" (vorbereiten)
         // und die Parameter "binden"
         $statement = ConnectionHandler::getConnection()->prepare($query);

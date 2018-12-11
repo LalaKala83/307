@@ -14,15 +14,6 @@ class userController
         // Anfrage an die URI /user/create weiterleiten (HTTP 302)
         header('Location: /user/create');
         exit();
-
-        header('Location: /user/save');
-        exit();
-
-        header('Location: /user/login');
-        exit();
-
-        header('Location: /user/authenticate');
-        exit();
     }
 
     public function login(){
