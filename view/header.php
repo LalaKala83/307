@@ -28,7 +28,7 @@
     </div>
     <div id="menueLittle">
         <ul>
-            <li><a href="/>Home</a></li>
+            <li><a href="/">Home</a></li>
             <li><a href="/experience/experience/">Entdecken</a></li>
             <li><a href="/entry/search/">Suchen</a></li>
             <li><a href="/user/login">Profil</a></li>

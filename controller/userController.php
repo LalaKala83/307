@@ -71,14 +71,13 @@ class userController
 
     public function create()
     {
-        global $isSignedIn;
+        $_SESSION["isSignedIn"] = null;
         $view = new View('user_register');
         $view->title = 'Benutzer erstellen';
         $view->heading = 'Benutzer erstellen';
         $view->display($_SESSION["isSignedIn"]);
     }
     public function save(){
-        global $isSignedIn;
         $email = $_POST["email"];
         $username = $_POST["username"];
         $password = $_POST["password"];
