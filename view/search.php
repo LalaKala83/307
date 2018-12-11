@@ -8,5 +8,8 @@
         <input class="searchbox" type="search" id="suche" placeholder="Suchebegriff eingeben"/>
         <input id="button" type="submit" value="Suchen"/>
     </div>
+    <div id="searchresults">
+
+    </div>
 </form>
 </div>

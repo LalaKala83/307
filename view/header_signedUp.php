@@ -33,3 +33,4 @@
             <li><a href="/user/logout">Abmelden</a></li>
         </ul>
     </div>
+        <div id="content">

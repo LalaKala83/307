@@ -34,24 +34,35 @@ html {
 }
 
 #page {
-    background: #fff;
+    background: #ffffff;
     line-height: 1.5;
     margin: 0 auto;
     max-width: 800px;
     padding: 1em 4em;
     min-width:500px;
+    min-height: 1000px;
 }
 
 #content {
-     background: #FFF;
-     min-height: 500px;
+     background: #ffffff;
+     min-height: 800px;
      padding: 1px;
  }
 
 #footer {
-    background:	#FFF;
-    min-height: 100px;
-    max-height: 100px;
+    background: #333;
+    margin-bottom: 5px;
+    min-height: 50px;
+    max-height: 50px;
+    width: 100%;
+    float:left;
+    bottom: 0;
+    position: fixed;
+}
+
+#footer > p {
+    color: white;
+    text-align: center;
 }
 
 #menue {
@@ -202,6 +213,15 @@ a {
     float: left;
 }
 
+#containerProfilepicture:hover {
+    background: #333;
+
+}
+
+#containerProfilepicture:hover  p.textProfilepicture {
+    color: white;
+}
+
 .textProfilepicture {
     text-align: center;
     margin-top: 40px;
@@ -250,4 +270,11 @@ a {
     height: 100%;
     background: transparent;
     border-style: none;
+}
+
+#searchresults {
+    margin-top: 10px;
+    width: 100%;
+    min-height: 200px;
+    border:1px solid black;
 }
