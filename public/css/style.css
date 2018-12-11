@@ -60,6 +60,11 @@ html {
     position: fixed;
 }
 
+#footer > p {
+    color: white;
+    text-align: center;
+}
+
 #menue {
     background: #FFF;
     display:block;
@@ -206,6 +211,15 @@ a {
     width: 140px;
     display: inline-block;
     float: left;
+}
+
+#containerProfilepicture:hover {
+    background: #333;
+
+}
+
+#containerProfilepicture:hover  p.textProfilepicture {
+    color: white;
 }
 
 .textProfilepicture {

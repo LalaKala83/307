@@ -4,7 +4,9 @@
 <div id="body">
     <h1><?= $title ?></h1>
     <div id="containerProfilepicture">
-        <p class="textProfilepicture" id="p">Profilbild hinzufügen</p>
+        <button class="buttonsExperience">
+            <p class="textProfilepicture" id="p">Profilbild hinzufügen</p>
+        </button>
     </div>
     <div id="usernameAndPassword">
         <h2>Benutzername</h2>
