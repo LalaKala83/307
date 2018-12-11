@@ -45,15 +45,16 @@ class UserRepository
         if (!$statement->execute()) {
             throw new Exception($statement->error);
         }
+
         $result = $statement->get_result();
         $row = mysqli_fetch_row($result);
-        if ($row != false){
-
-            password_verify($passwort, (string)$row);
-            return $username;
+        if (!empty($row)){
+            if (password_verify($passwort, reset($row)))
+                { return $username; }
+            else { return "invalides Password"; }
         }
         else{
-            return null;
+            return "invalider Benutzername";
         }
 
     }

@@ -40,13 +40,13 @@ class userController
 
         require_once ("../repository/UserRepository.php");
         $userrepo = new UserRepository();
-        $username = $userrepo->verify($username, $password);
-        if($username != null) {
-            $_SESSION["isSignedIn"] = $username;
+        $validusername = $userrepo->verify($username, $password);
+        if($validusername == $username) {
+            $_SESSION["isSignedIn"] = $validusername;
             $view = new View('profile');
             $view->title = 'Mein Profil';
             $view->heading = 'Mein Profil';
-            $view->username = htmlspecialchars($username);
+            $view->username = htmlspecialchars($validusername);
             $view->display($_SESSION["isSignedIn"]);
         }
         else {
@@ -54,6 +54,8 @@ class userController
             $view = new View('user_login');
             $view->title = 'Login';
             $view->heading = 'Login';
+            if ($validusername)
+                $view->validation = $validusername;
             $view->display($_SESSION["isSignedIn"]);
 
         }

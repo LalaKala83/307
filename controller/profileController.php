@@ -9,10 +9,19 @@
 class profileController
 {
     public function profile() {
-        $view = new View('profile');
-        $view->title = 'Mein Profil';
-        $view->heading = 'Mein Profil';
-        $view->username = $_SESSION["isSignedIn"];
-        $view->display($_SESSION["isSignedIn"]);
+        if ($_SESSION["isSignedIn"] != null){
+            $view = new View('profile');
+            $view->title = 'Mein Profil';
+            $view->heading = 'Mein Profil';
+            $view->username = $_SESSION["isSignedIn"];
+            $view->display($_SESSION["isSignedIn"]);
+        }
+        else {
+            $_SESSION["isSignedIn"] = null;
+            $view = new View('user_login');
+            $view->title = 'Login';
+            $view->heading = 'Login';
+            $view->display($_SESSION["isSignedIn"]);
+        }
     }
 }
