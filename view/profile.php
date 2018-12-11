@@ -16,6 +16,20 @@
         <a href="/profileBlog/createBlog" class="buttonChangePassword">Neuen Beitrag erfassen</a>
     </div>
     <div id="blogbox">
-
+        <?php if (empty($blogs)): ?>
+            <div class="dhd">
+                <h2 class="item title">Hoopla! Kein Blog gefunden.</h2>
+            </div>
+        <?php else: ?>
+            <?php foreach ($blogs as $blog):  ?>
+                <div class="panel-default">
+                    <div class="panel-heading"><?= $blog["titel"]; ?></div>
+                    <div class="panel-body">
+                        <p class="tag">Kategorie: <?= $blog["kontinent"]; ?></p>
+                        <p class="text"><?= $blog["inhalt"]; ?></p>
+                    </div>
+                </div>
+            <?php endforeach ?>
+        <?php endif ?>
     </div>
 </div>

@@ -8,11 +8,22 @@
 
 class profileController
 {
+
+    public function index()
+    {
+        $this->profile();
+    }
+
     public function profile() {
         if ($_SESSION["isSignedIn"] != null){
             $view = new View('profile');
             $view->title = 'Mein Profil';
             $view->heading = 'Mein Profil';
+
+            require_once ("../repository/BlogRepository.php");
+            $blogRepository = new BlogRepository();
+            $blogs = $blogRepository->readAllBlogsFromUser($_SESSION["isSignedIn"]);
+            $view->blogs = $blogs;
             $view->username = $_SESSION["isSignedIn"];
             $view->display($_SESSION["isSignedIn"]);
         }
