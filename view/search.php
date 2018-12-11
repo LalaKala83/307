@@ -5,7 +5,7 @@
     <h1><?= $title ?></h1>
 <form class="form-horizontal" action="/entry/find" method="post">
     <div data-html="true" id="login">
-        <input class="searchbox" type="search" id="username" placeholder="Benutzername eingeben"/>
+        <input class="searchbox" type="search" id="title" placeholder="Benutzername eingeben"/>
         <input id="button" type="submit" value="Suchen"/>
     </div>
     <div id="searchresults">

@@ -25,10 +25,13 @@ class entryController
     }
 
     public function find() {
-        echo "hallo";
+        $title = $_POST["title"];
+        $entryRepo = new EntryRepository();
+        $result =  $entryRepo->readById($title);
         $view = new View('search');
         $view->title = 'Benutzer suchen';
         $view->heading = 'Benutzer suchen';
+        
         $view->display($_SESSION["isSignedIn"]);
     }
 
