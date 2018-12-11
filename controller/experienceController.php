@@ -17,7 +17,6 @@ class experienceController
     }
 
     public function experience() {
-        global $isSignedIn;
         $view = new View('experience');
         $view->title = 'Entdecken';
         $view->heading = 'Entdecken';

@@ -38,7 +38,7 @@ class Dispatcher
 
         // Den gewünschten Controller laden
         // Falls der Controller nicht existiert, wird DefaultController angezeigt
-        if ($_SESSION["isSignedIn"]){
+        if ($_SESSION["isSignedIn"] != null){
         if(file_exists("../controller/$controllerName.php")){
             require_once "../controller/$controllerName.php";
 

@@ -28,7 +28,7 @@ class UserRepository
      */
     public function create($username, $email, $passwort)
     {
-        $passwort = sha1($passwort . "6DTbA2/#K.X<6-jL");
+        $passwort = password_hash($passwort, PASSWORD_BCRYPT);
         $query = "INSERT INTO $this->tableName (benutzername, email, passwort) VALUES (?, ?, ?)";
         $statement = ConnectionHandler::getConnection()->prepare($query);
         $statement->bind_param('sss',$username, $email, $passwort);
@@ -39,14 +39,22 @@ class UserRepository
     }
 
     public function verify($passwort, $username){
-        $query = "SELECT password from $this->tableName where benutzername LIKE $username";
+        $query = "SELECT passwort from $this->tableName where benutzername LIKE ?";
         $statement = ConnectionHandler::getConnection()->prepare($query);
         $statement->bind_param('s', $username);
         if (!$statement->execute()) {
             throw new Exception($statement->error);
         }
+        $result = $statement->get_result();
+        $row = mysqli_fetch_row($result);
+        if ($row != false){
 
-        $username = $statement->password;
+            password_verify($passwort, (string)$row);
+            return $username;
+        }
+        else{
+            return null;
+        }
 
     }
 }

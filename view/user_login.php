@@ -1,5 +1,5 @@
 <h1><?= $heading?></h1>
-<form action="login" method="post">
+<form action="authenticate" method="post">
     <div data-html="true" id="login">
         <p>
             <label for="username">Benutzername</label>
@@ -13,6 +13,7 @@
             <br>
             <br>
             <input id="button" type="submit" value="Absenden"/>
+            <div id="textred"><?= $invalidData ?></div>
         </p>
     </div>
 </form>

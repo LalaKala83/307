@@ -7,7 +7,7 @@
         <p class="textProfilepicture" id="p">Profilbild hinzufügen</p>
     </div>
     <div id="usernameAndPassword">
-        <h2>Benutzername</h2>
+        <h2><?= $username?></h2>
         <button id="buttonChangePassword">Passwort ändern</button>
     </div>
 </div>
