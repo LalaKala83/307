@@ -27,7 +27,7 @@ class Repository
     public function readById($id)
     {
         // Query erstellen
-        $query = "SELECT * FROM {$this->tableName} WHERE id=?";
+        $query = "SELECT * FROM {$this->tableName} WHERE benutzername = ?";
         // Datenbankverbindung anfordern und, das Query "preparen" (vorbereiten)
         // und die Parameter "binden"
         $statement = ConnectionHandler::getConnection()->prepare($query);
