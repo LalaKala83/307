@@ -6,7 +6,7 @@
  * Time: 14:03
  */
 require_once '../lib/Repository.php';
-class UserRepository
+class UserRepository extends Repository
 {
     /**
      * Diese Variable wird von der Klasse Repository verwendet, um generische
@@ -39,22 +39,30 @@ class UserRepository
     }
 
     public function verify($passwort, $username){
-        $query = "SELECT passwort from $this->tableName where benutzername LIKE ?";
+
+        // Query erstellen
+        $query = "SELECT passwort FROM {$this->tableName} WHERE benutzername = ?";
+        // Datenbankverbindung anfordern und, das Query "preparen" (vorbereiten)
+        // und die Parameter "binden"
         $statement = ConnectionHandler::getConnection()->prepare($query);
         $statement->bind_param('s', $username);
-        if (!$statement->execute()) {
+        // Das Statement absetzen
+        $statement->execute();
+        // Resultat der Abfrage holen
+        $result = $statement->get_result();
+        if (!$result) {
             throw new Exception($statement->error);
         }
-
-        $result = $statement->get_result();
-        $row = mysqli_fetch_row($result);
-        if (!empty($row)){
+        // Ersten Datensatz aus dem Reultat holen
+        $row = $result->fetch_array();
+        if ($row !== null)
+        {
             if (password_verify($passwort, reset($row)))
-                { return $username; }
-            else { return "invalides Password"; }
+            { return $username; }
         }
-        else{
-            return "invalider Benutzername";
+
+        else {
+            return "Benutzername oder Passwort ungültig";
         }
 
     }
