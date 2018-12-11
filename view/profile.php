@@ -10,10 +10,10 @@
     </div>
     <div id="usernameAndPassword">
         <h2><?= $username?></h2>
-        <button id="buttonChangePassword">Passwort ändern</button>
+        <button class="buttonChangePassword">Passwort ändern</button>
     </div>
     <div id="createNewBlog">
-        <button id="buttonChangePassword">Neuen Beitrag erfassen</button>
+        <a href="/createBlog/createBlog" class="buttonChangePassword">Neuen Beitrag erfassen</a>
     </div>
     <div id="blogbox">
 
