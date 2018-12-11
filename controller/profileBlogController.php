@@ -29,8 +29,12 @@ class profileBlogController
     {
         $title = $_POST["title"];
         $tag = $_POST["tags"];
-        $picture = $_POST["fileToUpload"];
-        $textarea = $_POST["blog"];
+        $image = $_POST["fileToUpload"];
+        $text = $_POST["blog"];
+
+        require_once ("../repository/BlogRepository.php");
+        $blogRepository = new BlogRepository();
+        $blogRepository->create($title, $tag, $image, $text);
 
         $view = new View('profile');
         $view->title = 'Mein Profil';
