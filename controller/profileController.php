@@ -35,4 +35,24 @@ class profileController
             $view->display($_SESSION["isSignedIn"]);
         }
     }
+
+    public function deleteBlog() {
+        $blogId = $_GET['id'];
+        $view = new View('deleteBlog');
+        $view->title = 'Beitrag löschen';
+        $view->heading = 'Beitrag löschen';
+        $view->blogID = $blogId;
+        $view->display($_SESSION["isSignedIn"]);
+    }
+
+    public function deleteTheBlog() {
+        $id = $_POST['id'];
+        require_once ("../repository/BlogRepository.php");
+        $blogRepository = new BlogRepository();
+        $blogRepository->deleteFromBetweenTable($id);
+        $blogRepository->deleteFromTable($id);
+
+        require_once ("profileController.php");
+        header("Location: /profile/profile");
+    }
 }

@@ -12,7 +12,7 @@ class BlogRepository extends Repository
 
     public function create($title, $tag, $image, $text)
     {
-        $query = "INSERT INTO $this->tableName (titel, inhalt, kontinent) VALUES (?, ?, ?)";
+        $query = "INSERT INTO {$this->tableName} (titel, inhalt, kontinent) VALUES (?, ?, ?)";
         $statement = ConnectionHandler::getConnection()->prepare($query);
         $statement->bind_param('sss',$title, $text, $tag);
         if (!$statement->execute()) {
@@ -25,13 +25,34 @@ class BlogRepository extends Repository
 
     public function setInBetweenTable($blogId, $username)
     {
-        $query = "INSERT INTO $this->betweenTableName (fk_benutzername,fk_beitrag_id) VALUES (?, ?)";
+        $query = "INSERT INTO {$this->betweenTableName} (fk_benutzername,fk_beitrag_id) VALUES (?, ?)";
         $statement = ConnectionHandler::getConnection()->prepare($query);
         $statement->bind_param('ss',$username, $blogId);
         if (!$statement->execute()) {
             throw new Exception($statement->error);
         }
     }
+
+    public function deleteFromBetweenTable($blogID)
+    {
+        $query = "DELETE FROM {$this->betweenTableName} where {$this->betweenTableName}.fk_beitrag_id = ?";
+        $statement = ConnectionHandler::getConnection()->prepare($query);
+        $statement->bind_param('s',$blogID);
+        if (!$statement->execute()) {
+            throw new Exception($statement->error);
+        }
+    }
+
+    public function deleteFromTable($blogID)
+    {
+        $query = "DELETE FROM {$this->tableName} where {$this->tableName}.id = ?";
+        $statement = ConnectionHandler::getConnection()->prepare($query);
+        $statement->bind_param('s',$blogID);
+        if (!$statement->execute()) {
+            throw new Exception($statement->error);
+        }
+    }
+
 
     public function readAllBlogsFromUser($username)
     {

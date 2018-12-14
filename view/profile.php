@@ -28,6 +28,9 @@
                         <p class="tag">Kategorie: <?= $blog["kontinent"]; ?></p>
                         <p class="text"><?= $blog["inhalt"]; ?></p>
                     </div>
+                    <a href="/profile/deleteBlog?id=<?= $blog["id"]; ?>">
+                        <p>Beitrag löschen</p>
+                    </a>
                 </div>
             <?php endforeach ?>
         <?php endif ?>

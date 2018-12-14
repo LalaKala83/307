@@ -39,7 +39,6 @@ class profileBlogController
         $blogRepository->setInBetweenTable($id, $_SESSION["isSignedIn"]);
 
         require_once ("profileController.php");
-        $profilcontroller = new profileController();
-        $profilcontroller->index();
+        header("Location: /profile/profile");
     }
 }
