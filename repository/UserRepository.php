@@ -39,9 +39,7 @@ class UserRepository extends Repository
     }
 
     public function verify($username, $passwort){
-
         // Query erstellen
-        echo $passwort;
         $query = "SELECT passwort FROM {$this->tableName} WHERE benutzername LIKE ?";
         // Datenbankverbindung anfordern und, das Query "preparen" (vorbereiten)
         // und die Parameter "binden"
@@ -56,7 +54,6 @@ class UserRepository extends Repository
         }
         // Ersten Datensatz aus dem Reultat holen
         $row = $result->fetch_array();
-        echo $row;
         if ($row !== null)
         {
             if (password_verify($passwort, reset($row)))
@@ -67,7 +64,7 @@ class UserRepository extends Repository
         }
 
         else {
-            return "Benutzername oder Passwort ungültig";
+            return "Benutzername ungültig";
         }
 
     }
