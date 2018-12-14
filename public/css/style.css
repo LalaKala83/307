@@ -27,6 +27,7 @@ button {
 .type1 {
     font-size: 20px;
     font-family: sans-serif;
+    color: white;
     padding: 10px;
     margin-right: 70px;
     margin-top: 15px;
@@ -38,6 +39,21 @@ button {
     background-color: #111;
 }
 
+.type2 {
+    font-size: 20px;
+    font-family: sans-serif;
+    color: white;
+    padding: 10px;
+    display: inline-block;
+}
+
+.type2:hover {
+    background-color: #111;
+}
+
+#login {
+    align-content: center;
+}
 #page {
     background: #ffffff;
     line-height: 1.5;
@@ -87,6 +103,7 @@ button {
 #menue li {
     float: left;
     width: 25%;
+    font-size: 18px;
 }
 
 #menue li a {

@@ -25,7 +25,7 @@ class BlogRepository extends Repository
 
     public function setInBetweenTable($blogId, $username)
     {
-        $query = "INSERT INTO $this->betweenTableName (fk_uname,fk_bid) VALUES (?, ?)";
+        $query = "INSERT INTO $this->betweenTableName (fk_benutzername,fk_beitrag_id) VALUES (?, ?)";
         $statement = ConnectionHandler::getConnection()->prepare($query);
         $statement->bind_param('ss',$username, $blogId);
         if (!$statement->execute()) {
@@ -35,8 +35,8 @@ class BlogRepository extends Repository
 
     public function readAllBlogsFromUser($username)
     {
-        $query = "SELECT * FROM {$this->tableName} left join {$this->betweenTableName} on {$this->tableName}.id = {$this->betweenTableName}.fk_bid
-         where fk_uname = ?";
+        $query = "SELECT * FROM {$this->tableName} left join {$this->betweenTableName} on {$this->tableName}.id = {$this->betweenTableName}.fk_beitrag_id
+         where fk_benutzername = ?";
 
         $statement = ConnectionHandler::getConnection()->prepare($query);
         $statement->bind_param('s', $username);

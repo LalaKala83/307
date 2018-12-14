@@ -13,6 +13,5 @@ session_start();
 require_once '../lib/Dispatcher.php';
 require_once '../lib/view.php';
 
-
 $dispatcher = new Dispatcher();
 $dispatcher->dispatch();

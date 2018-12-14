@@ -22,6 +22,7 @@ class profileBlogController
             $view->title = 'Login';
             $view->heading = 'Login';
             $view->display($_SESSION["isSignedIn"]);
+            $bla = array("sew",2,3);
         }
     }
 

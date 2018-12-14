@@ -1,4 +1,4 @@
-    <h1><?= title?></h1>
+    <h1><?= $title?></h1>
     <form action="save" method="post">
         <div data-html="true" id="login">
             <p>
@@ -17,7 +17,8 @@
             <input id="password" name="password" type="password">
             <br>
             <br>
-            <input id="button" type="submit" value="Absenden"/>
-            </p>
+            <input id="button" class="boxRound type2" type="submit" value="Absenden"/>
+            <br>
+            <br>
         </div>
     </form>

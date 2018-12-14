@@ -18,7 +18,7 @@
 </div>
 <div id="page">
     <div id="menueicon"><img src="/images/icon/menueicon.png" alt="Menü" onclick="showMenue()"/></div>
-    <div id=menue>
+    <div id="menue" class="boxRound">
         <ul>
             <li><a href="/">Home</a></li>
             <li><a href="/experience/experience/">Entdecken</a></li>
