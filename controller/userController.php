@@ -29,7 +29,7 @@ class userController
         $username = $_POST["username"];
         $password = $_POST["password"];
 
-        require_once ("../repository/UserRepository.php");
+        require ("../repository/UserRepository.php");
         $userrepo = new UserRepository();
         $validusername = $userrepo->verify($username, $password);
         if($validusername == $username) {
@@ -73,7 +73,7 @@ class userController
         $username = $_POST["username"];
         $password = $_POST["password"];
 
-        require_once ("../repository/UserRepository.php");
+        require ("../repository/UserRepository.php");
         $userRepository = new UserRepository();
         $userRepository->create($username, $email, $password);
 
