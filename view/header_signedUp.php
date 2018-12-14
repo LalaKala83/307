@@ -4,8 +4,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
     <title><?= $title ?></title>
-
-    <link href="https://fonts.googleapis.com/css?family=Amatic+SC|Noto+Serif+TC|Titillium+Web" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Nunito|PT+Serif" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet">
     <link rel="stylesheet" href="/css/style.css"  type="text/css">
