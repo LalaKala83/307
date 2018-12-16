@@ -5,7 +5,6 @@
 
     <title><?= $title ?></title>
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Nunito|PT+Serif" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet">
     <link rel="stylesheet" href="/css/style.css"  type="text/css">
     <script src="/js/mainScript.js"></script>

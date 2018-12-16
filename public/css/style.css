@@ -15,8 +15,7 @@ html {
 }
 
 .boxRound {
-    border-sizing: border-box;
-    width: content-box;
+    box-sizing: border-box;
     border-radius: 3px 15px 3px 15px;
     background-color: #333;
 }
