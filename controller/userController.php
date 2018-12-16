@@ -33,7 +33,6 @@ class userController
     }
 
     public function authenticate(){
-        //todo: umleiten auf profile/profile
         $username = $_POST["username"];
         $password = $_POST["password"];
 

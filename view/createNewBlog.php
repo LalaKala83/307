@@ -35,8 +35,8 @@
                 <textarea name="blog" class="form" id="textarea"><?= $blogContent ?></textarea>
             <br>
             <input type="hidden" name="id" value="<?=$blogID?>">
-            <a href="/profile/profile" class="button">Abbrechen</a>
-            <input class="button"  type="submit" value="<?= $buttonValue ?>"/>
+            <a href="/profile/profile" class="buttonDefault">Abbrechen</a>
+            <input class="buttonDefault" type="submit" value="<?= $buttonValue ?>"/>
             </p>
         </div>
     </form>

@@ -17,10 +17,10 @@
             <input id="password" name="password" type="password">
             <br>
             <br>
-            <input id="button" class="boxRound type2" type="submit" value="Absenden"/>
+            <input id="button" class="boxRound buttonCenter" type="submit" value="Einloggen"/>
             <br>
             <br>
-            <div class="boxRound type1">
+            <div class="boxRound buttonRight">
                 <a href="/user/create">Registrieren</a>
             </div>
         </p>

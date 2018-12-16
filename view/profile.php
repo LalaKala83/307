@@ -10,10 +10,10 @@
     </div>
     <div id="usernameAndPassword">
         <h2><?= $username?></h2>
-        <a href="/user/change" class="button boxRound">Passwort ändern</a>
+        <a href="/user/change" class="buttonDefault boxRound">Passwort ändern</a>
     </div>
     <div id="createNewBlog">
-        <a href="/profileBlog/createBlog" class="button boxRound">Neuen Beitrag erfassen</a>
+        <a href="/profileBlog/createBlog" class="buttonDefault boxRound">Neuen Beitrag erfassen</a>
     </div>
     <div id="blogbox">
         <?php if (empty($blogs)): ?>
@@ -28,10 +28,10 @@
                         <p class="tag">Kategorie: <?= $blog["kontinent"]; ?></p>
                         <p class="text"><?= $blog["inhalt"]; ?></p>
                     </div>
-                    <a class="button boxRound" href="/updateBlog/updateBlog?id=<?= $blog["id"]; ?>">
+                    <a class="buttonDefault boxRound" href="/updateBlog/updateBlog?id=<?= $blog["id"]; ?>">
                         Beitrag bearbeiten
                     </a>
-                    <a class="button boxRound" href="/profile/deleteBlog?id=<?= $blog["id"]; ?>">
+                    <a class="buttonDefault boxRound" href="/profile/deleteBlog?id=<?= $blog["id"]; ?>">
                         Beitrag löschen
                     </a>
                 </div>

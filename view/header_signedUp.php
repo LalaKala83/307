@@ -12,7 +12,7 @@
 
 </head>
 <body>
-<div class="boxRound type1">
+<div class="boxRound buttonRight">
     <a href="/user/logout">Abmelden</a>
 </div>
 <div id="page">

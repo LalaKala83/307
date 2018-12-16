@@ -13,3 +13,4 @@
             <h1>Ein Fehler ist aufgetreten!</h1>
         <?php endif;?>
     </div>
+</div>

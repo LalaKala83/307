@@ -17,7 +17,7 @@
             <input id="newPW" name="newPW" type="password">
             <br>
             <br>
-            <input id="button" class="boxRound type2" type="submit" value="Absenden"/>
+            <input id="button" class="boxRound buttonCenter" type="submit" value="Absenden"/>
         </p>
     </div>
 </form>

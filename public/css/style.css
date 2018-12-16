@@ -34,7 +34,7 @@ button {
     margin: 5px;
     padding: 10px;
 }
-.type1 {
+.buttonRight {
     font-size: 20px;
     font-family: sans-serif;
     color: white;
@@ -45,11 +45,11 @@ button {
     padding: 14px 16px;
 }
 
-.type1:hover {
+.buttonRight:hover {
     background-color: #111;
 }
 
-.type2 {
+.buttonCenter {
     font-size: 20px;
     font-family: 'Raleway', sans-serif;
     color: white;
@@ -57,7 +57,7 @@ button {
     display: inline-block;
 }
 
-.type2:hover {
+.buttonCenter:hover {
     background-color: #111;
 }
 
@@ -215,7 +215,7 @@ a {
     #menueLittle ul li:hover{
         background-color: lightgray;
     }
-    .type1{
+    .buttonRight{
         display:none;
 
 
@@ -420,7 +420,7 @@ a {
     text-align: center;
 }
 
-.button {
+.buttonDefault {
     color: white;
     background: #333;
     border-style: none;
@@ -432,10 +432,10 @@ a {
     cursor: pointer;
 }
 
-input.button {
+input.buttonDefault {
     padding: 11px 10px 10.5px;
 }
 
-.button:hover {
+.buttonDefault:hover {
     background: black;
 }
