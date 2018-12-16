@@ -22,10 +22,18 @@ class userController
         $view->title = 'Login';
         $view->heading = 'Login';
         $view->display($_SESSION["isSignedIn"]);
+    }
 
+    public function loginWithValidation($validation){
+        $_SESSION["isSignedIn"] = null;
+        $view = new View('user_login');
+        $view->title = 'Login';
+        $view->heading = 'Login';
+        $view->display($_SESSION["isSignedIn"]);
     }
 
     public function authenticate(){
+        //todo: umleiten auf profile/profile
         $username = $_POST["username"];
         $password = $_POST["password"];
 
@@ -34,11 +42,8 @@ class userController
         $validusername = $userrepo->verify($username, $password);
         if($validusername == $username) {
             $_SESSION["isSignedIn"] = $validusername;
-            $view = new View('profile');
-            $view->title = 'Mein Profil';
-            $view->heading = 'Mein Profil';
-            $view->username = htmlspecialchars($validusername);
-            $view->display($_SESSION["isSignedIn"]);
+            require_once ("profileController.php");
+            header("Location: /profile/profile");
         }
         else {
             $_SESSION["isSignedIn"] = null;

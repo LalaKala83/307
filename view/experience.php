@@ -4,48 +4,48 @@
 <div id="body">
     <h1><?= $title ?></h1>
     <div class="divExperience">
-        <button class="buttonsExperience">
+        <a class="buttonsExperience" href="/experience/show/na">
         <p class="divExperienceText">Nordamerika</p>
-        </button>
+        </a>
     </div>
     <div class="divExperience">
-        <button class="buttonsExperience">
+        <a class="buttonsExperience" href="/experience/show/europe">
         <p class="divExperienceText">Europa</p>
-        </button>
+        </a>
     </div>
     <div class="divExperience">
-        <button class="buttonsExperience">
+        <a class="buttonsExperience" href="/experience/show/asia">
         <p class="divExperienceText">Asien</p>
-        </button>
+        </a>
     </div>
     <div class="divExperience">
-        <button class="buttonsExperience">
+        <a class="buttonsExperience" href="/experience/show/sa">
         <p class="divExperienceText">Südamerika</p>
-        </button>
+        </a>
     </div>
     <div class="divExperience">
-        <button class="buttonsExperience">
+        <a class="buttonsExperience" href="/experience/show/africa">
         <p class="divExperienceText">Afrika</p>
-        </button>
+        </a>
     </div>
     <div class="divExperience">
-        <button class="buttonsExperience">
+        <a class="buttonsExperience" href="/experience/show/australia">
         <p class="divExperienceText">Australien</p>
-        </button>
+        </a>
     </div>
     <div class="divExperience">
-        <button class="buttonsExperience">
+        <a class="buttonsExperience" href="/experience/show/antarctis">
         <p class="divExperienceText">Antarktis</p>
-        </button>
+        </a>
     </div>
     <div class="divExperience">
-        <button class="buttonsExperience">
+        <a class="buttonsExperience" href="/experience/show/oceania">
         <p class="divExperienceText">Ozeanien</p>
-        </button>
+        </a>
     </div>
     <div class="divExperience">
-        <button class="buttonsExperience">
+        <a class="buttonsExperience" href="/experience/show/others">
         <p class="divExperienceText">Andere</p>
-        </button>
+        </a>
     </div>
 </div>

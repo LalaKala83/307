@@ -16,7 +16,7 @@
         <a href="/user/login">Anmelden</a>
     </div>
     <div id="page">
-    <div id="menueicon"><img src="/images/icon/menueicon.png" alt="Menü" onclick="showMenue()"/></div>
+    <div id="menueicon"><img src="/images/icon/menueicon.png" alt="Menü" onclick="showMenue()"></div>
     <div id="menue"  class="boxRound">
         <ul>
             <li><a href="/">Home</a></li>

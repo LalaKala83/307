@@ -18,7 +18,7 @@
     <div id="blogbox">
         <?php if (empty($blogs)): ?>
             <div class="dhd">
-                <h2 class="item title">Hoopla! Kein Blog gefunden.</h2>
+                <h2 class="item title">Hoppla! Kein Blog gefunden.</h2>
             </div>
         <?php else: ?>
             <?php foreach ($blogs as $blog):  ?>

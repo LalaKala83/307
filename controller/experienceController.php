@@ -22,4 +22,49 @@ class experienceController
         $view->heading = 'Entdecken';
         $view->display($_SESSION["isSignedIn"]);
     }
+
+    public function show(){
+        $uri = $_SERVER['REQUEST_URI'];
+        $uri = strtok($uri, '?');
+        $uri = trim($uri, '/');
+        $uriFragments = explode('/', $uri);
+        $important = end($uriFragments);
+
+        $continent = $this->getContinent($important);
+
+        require_once ("../repository/EntryRepository.php");
+        $entryRepo = new EntryRepository();
+        $result =  $entryRepo->readByContinent($continent);
+
+
+        $view = new View('experience_continent');
+        $view->title = $continent;
+        $view->heading = $continent;
+        $view->result = $result;
+        $view->display($_SESSION["isSignedIn"]);
+    }
+
+    private function getContinent($continent){
+        switch ($continent){
+            case "na":
+                return "Nordamerika";
+                break;
+            case "sa":
+                return "Südamerika";
+            case "africa":
+                return "Afrika";
+            case  "europe":
+                return "Europa";
+            case "asia":
+                return "Asien";
+            case "antarctis":
+                return "Antarktis";
+            case "oceania":
+                return "Ozeanien";
+            case "australia":
+                return "Australien";
+            default:
+                return "other";
+        }
+    }
 }

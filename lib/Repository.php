@@ -18,20 +18,20 @@ class Repository
     /**
      * Diese Funktion gibt den Datensatz mit der gegebenen id zurück.
      *
-     * @param $id id des gesuchten Datensatzes
+     * @param $title id des gesuchten Datensatzes
      *
      * @throws Exception falls das Ausführen des Statements fehlschlägt
      *
      * @return Der gesuchte Datensatz oder null, sollte dieser nicht existieren.
      */
-    public function readById($id)
+    public function readById($title)
     {
         // Query erstellen
-        $query = "SELECT * FROM {$this->tableName} WHERE benutzername = ?";
+        $query = "SELECT * FROM {$this->tableName} WHERE id = ?";
         // Datenbankverbindung anfordern und, das Query "preparen" (vorbereiten)
         // und die Parameter "binden"
         $statement = ConnectionHandler::getConnection()->prepare($query);
-        $statement->bind_param('s', $id);
+        $statement->bind_param('s', $title);
         // Das Statement absetzen
         $statement->execute();
         // Resultat der Abfrage holen
@@ -40,7 +40,7 @@ class Repository
             throw new Exception($statement->error);
         }
         // Ersten Datensatz aus dem Reultat holen
-        $row = $result->fetch_object();
+        $row = $result->fetch_array();
         // Datenbankressourcen wieder freigeben
         $result->close();
         // Den gefundenen Datensatz zurückgeben

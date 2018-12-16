@@ -2,9 +2,14 @@
     <img src="/images/c.jpg" width="100%">
 </div>
 <div id="body">
-    <form class="form-horizontal"
+    <h1><?= $blog["titel"]; ?></h1>
+    <p class="kontinent"><?= $blog["kontinent"]; ?></p>
     <div id="searchresults">
-        <?php if (!empty($result)): ?>
-        <h1><?= $result->titel ?></h1>
+        <?php if (!empty($blog)): ?>
+            <div class="panel-body">
+                <p class="text"><?= $blog["inhalt"]; ?></p>
+            </div>
+        <?php else: ?>
+            <h1>Ein Fehler ist aufgetreten!</h1>
         <?php endif;?>
     </div>

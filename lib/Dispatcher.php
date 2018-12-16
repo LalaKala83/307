@@ -55,7 +55,7 @@ class Dispatcher
             $controller->$method();
             }
         }
-        else{        if(file_exists("../controller/$controllerName.php")){
+        else {        if(file_exists("../controller/$controllerName.php")){
             require_once "../controller/$controllerName.php";
 
             // Eine neue Instanz des Controllers wird erstellt und die gewünschte
