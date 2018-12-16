@@ -7,12 +7,10 @@
     <div id="searchresults">
     <?php if (!empty($result)): ?>
         <?php foreach ($result as $row): ?>
-            <a href="show/<?=$row->titel; ?>" id="buttonCreateBlog" ><?= $row->titel; ?></a>
+            <a href="show/<?=$row["id"]; ?>" class="boxRound buttonSearch" ><?= $row["titel"]; ?></a>
         <?php endforeach ?>
     <?php else:?>
         <p>Nicht vorhanden</p>
     <?php endif ?>
 </div>
-
-
     <a href="search" id="buttonCreateBlog">Zurück zur Suche</a>

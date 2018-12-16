@@ -27,16 +27,15 @@ class entryController
         $uri = strtok($uri, '?');
         $uri = trim($uri, '/');
         $uriFragments = explode('/', $uri);
-
         $important = end($uriFragments);
+
         require_once ("../repository/EntryRepository.php");
         $entryRepo = new EntryRepository();
         $result =  $entryRepo->readById($important);
 
         $view = new View('entry_alone');
-        $view->title = $important;
-        $view->heading = $important;
-        $view->result = $important;
+        $view->title = $result["titel"];
+        $view->blog = $result;
         $view->display($_SESSION["isSignedIn"]);
 
     }
@@ -45,7 +44,7 @@ class entryController
         $title = $_POST['title'];
         require_once ("../repository/EntryRepository.php");
         $entryRepo = new EntryRepository();
-        $result =  $entryRepo->readById($title);
+        $result =  $entryRepo->readByTitle($title);
 
         $view = new View('entry_found');
         $view->title = 'Gefundene Einträge';

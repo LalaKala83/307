@@ -3,10 +3,10 @@
 </div>
 <div id="body">
     <h1><?= $title ?></h1>
-<form class="form-horizontal" action="find" method="post">
+<form class="form-horizontal" action="/entry/find" method="post">
     <div data-html="true" id="login">
-        <input id="title" name="title" class="searchbox" type="search" placeholder="Benutzername eingeben"/>
-        <input id="button" type="submit" value="Suchen"/>
+        <input id="title" name="title" class="searchbox" type="search" placeholder="Zielort eingeben"/>
+        <input id="button" class="boxRound button" type="submit" value="Suchen"/>
     </div>
 </form>
 </div>

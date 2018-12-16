@@ -69,14 +69,14 @@ class UserRepository extends Repository
 
     }
 
-    public function readById($id)
+    public function readByTitle($title)
     {
         // Query erstellen
         $query = "SELECT * FROM {$this->tableName} WHERE benutzername LIKE ?";
         // Datenbankverbindung anfordern und, das Query "preparen" (vorbereiten)
         // und die Parameter "binden"
         $statement = ConnectionHandler::getConnection()->prepare($query);
-        $statement->bind_param('s', $id);
+        $statement->bind_param('s', $title);
         // Das Statement absetzen
         $statement->execute();
         // Resultat der Abfrage holen

@@ -13,15 +13,15 @@ class EntryRepository extends Repository
     protected $tableName = 'beitrag';
 
 
-    public function readById($id)
+    public function readByTitle($title)
     {
         // Query erstellen
         $query = "SELECT * FROM {$this->tableName} WHERE titel LIKE ?";
         // Datenbankverbindung anfordern und, das Query "preparen" (vorbereiten)
         // und die Parameter "binden"
-        $id = '%' . $id .'%';
+        $title = '%' . $title .'%';
         $statement = ConnectionHandler::getConnection()->prepare($query);
-        $statement->bind_param('s', $id);
+        $statement->bind_param('s', $title);
         // Das Statement absetzen
         $statement->execute();
         // Resultat der Abfrage holen
@@ -29,10 +29,44 @@ class EntryRepository extends Repository
         if (!$result) {
             throw new Exception($statement->error);
         }
+
         $rows = array();
-        while ($row = $result->fetch_object()) {
+
+        // Ersten Datensatz aus dem Resultat holen
+        foreach($result as $row)
+        {
             $rows[] = $row;
         }
+        // Datenbankressourcen wieder freigeben
+        $result->close();
+        // Den gefundenen Datensatz zurückgeben
+        return $rows;
+    }
+    public function readByContinent($continent)
+    {
+        // Query erstellen
+        $query = "SELECT * FROM {$this->tableName} WHERE kontinent LIKE ?";
+        // Datenbankverbindung anfordern und, das Query "preparen" (vorbereiten)
+        // und die Parameter "binden"
+        $continent = '%' . $continent .'%';
+        $statement = ConnectionHandler::getConnection()->prepare($query);
+        $statement->bind_param('s', $continent);
+        // Das Statement absetzen
+        $statement->execute();
+        // Resultat der Abfrage holen
+        $result = $statement->get_result();
+        if (!$result) {
+            throw new Exception($statement->error);
+        }
+
+        $rows = array();
+
+        foreach($result as $row)
+        {
+            $rows[] = $row;
+        }
+        // Datenbankressourcen wieder freigeben
+        $result->close();
         // Den gefundenen Datensatz zurückgeben
         return $rows;
     }

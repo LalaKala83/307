@@ -3,49 +3,49 @@
 </div>
 <div id="body">
     <h1><?= $title ?></h1>
+    <a class="buttonsExperience" href="/experience/show/na">
+        <div class="divExperience">
+            <p class="divExperienceText">Nordamerika</p>
+        </div>
+    </a>
+    <a class="buttonsExperience" href="/experience/show/europe">
+        <div class="divExperience">
+            <p class="divExperienceText">Europa</p>
+        </div>
+    </a>
+    <a class="buttonsExperience" href="/experience/show/asia">
     <div class="divExperience">
-        <button class="buttonsExperience">
-        <p class="divExperienceText">Nordamerika</p>
-        </button>
-    </div>
-    <div class="divExperience">
-        <button class="buttonsExperience">
-        <p class="divExperienceText">Europa</p>
-        </button>
-    </div>
-    <div class="divExperience">
-        <button class="buttonsExperience">
         <p class="divExperienceText">Asien</p>
-        </button>
     </div>
-    <div class="divExperience">
-        <button class="buttonsExperience">
-        <p class="divExperienceText">Südamerika</p>
-        </button>
-    </div>
-    <div class="divExperience">
-        <button class="buttonsExperience">
-        <p class="divExperienceText">Afrika</p>
-        </button>
-    </div>
-    <div class="divExperience">
-        <button class="buttonsExperience">
-        <p class="divExperienceText">Australien</p>
-        </button>
-    </div>
-    <div class="divExperience">
-        <button class="buttonsExperience">
-        <p class="divExperienceText">Antarktis</p>
-        </button>
-    </div>
-    <div class="divExperience">
-        <button class="buttonsExperience">
-        <p class="divExperienceText">Ozeanien</p>
-        </button>
-    </div>
-    <div class="divExperience">
-        <button class="buttonsExperience">
-        <p class="divExperienceText">Andere</p>
-        </button>
-    </div>
+    </a>
+    <a class="buttonsExperience" href="/experience/show/sa">
+        <div class="divExperience">
+            <p class="divExperienceText">Südamerika</p>
+        </div>
+    </a>
+    <a class="buttonsExperience" href="/experience/show/africa">
+        <div class="divExperience">
+            <p class="divExperienceText">Afrika</p>
+        </div>
+    </a>
+    <a class="buttonsExperience" href="/experience/show/australia">
+        <div class="divExperience">
+            <p class="divExperienceText">Australien</p>
+        </div>
+    </a>
+    <a class="buttonsExperience" href="/experience/show/antarctis">
+        <div class="divExperience">
+            <p class="divExperienceText">Antarktis</p>
+        </div>
+    </a>
+    <a class="buttonsExperience" href="/experience/show/oceania">
+        <div class="divExperience">
+            <p class="divExperienceText">Ozeanien</p>
+        </div>
+    </a>
+    <a class="buttonsExperience" href="/experience/show/others">
+        <div class="divExperience">
+            <p class="divExperienceText">Andere</p>
+        </div>
+    </a>
 </div>
