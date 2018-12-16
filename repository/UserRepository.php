@@ -38,6 +38,37 @@ class UserRepository extends Repository
         return $statement->insert_id;
     }
 
+    public function verifyPW($username, $passwort){
+        $query = "SELECT passwort FROM {$this->tableName} WHERE benutzername LIKE ?";
+        // und die Parameter "binden"
+        $statement = ConnectionHandler::getConnection()->prepare($query);
+        $statement->bind_param('s', $username);
+        // Das Statement absetzen
+        $statement->execute();
+        // Resultat der Abfrage holen
+        $result = $statement->get_result();
+        if (!$result) {
+            throw new Exception($statement->error);
+        }
+        // Ersten Datensatz aus dem Reultat holen
+        $row = $result->fetch_array();
+        if ($row !== null)
+        {
+            if (password_verify($passwort, reset($row)))
+            { return true; }
+        }
+        return false;
+    }
+
+    public function changePW($username, $passwort){
+        $passwort = password_hash($passwort, PASSWORD_BCRYPT);
+        $query = "UPDATE {$this->tableName} SET {$this->tableName}.passwort = ? WHERE benutzername = ?";
+        $statement = ConnectionHandler::getConnection()->prepare($query);
+        $statement->bind_param('ss', $passwort, $username);
+        if (!$statement->execute()) {
+            throw new Exception($statement->error);
+        }
+    }
     public function verify($username, $passwort){
         // Query erstellen
         $query = "SELECT passwort FROM {$this->tableName} WHERE benutzername LIKE ?";

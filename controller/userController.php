@@ -90,4 +90,33 @@ class userController
         $view->username = $username;
         $view->display($_SESSION["isSignedIn"]);
     }
+    public function change(){
+        $view = new View('user_changePW');
+        $view->title = 'Passwort ändern';
+        $view->heading = 'Passwort ändern';
+        $view->display($_SESSION["isSignedIn"]);
+    }
+
+    public function changing(){
+        $username = $_SESSION["isSignedIn"];
+        $oldPW = $_POST["oldPW"];
+        $newPW = $_POST["newPW"];
+
+
+        require_once ("../repository/UserRepository.php");
+        $userRepository = new UserRepository();
+        $isCorrect = $userRepository->verifyPW($username, $oldPW);
+        if ($isCorrect){
+            $userRepository->changePW($username, $newPW);
+            require_once ("profileController.php");
+            header("Location: /profile/profile");
+        }
+        else {
+            $view = new View('incorrectPW');
+            $view->title = 'Passwort inkorrekt';
+            $view->heading = 'Passwort inkorrekt';
+            $view->display($_SESSION["isSignedIn"]);
+        }
+
+    }
 }
