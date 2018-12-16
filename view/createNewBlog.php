@@ -3,26 +3,25 @@
 </div>
 <div id="body">
     <h1><?= $title ?></h1>
-    <form action="/profileBlog/createTheBlog" method="post">
+    <form action="<?= $action ?>" method="post">
         <div>
-            <p>
             <label for="title" class="form">Titel</label>
             <br>
-            <input id="formInputFields" class="form" name="title" type="text">
+                <input id="formInputFields" value="<?= $blogTitle ?>" class="form" name="title" type="text">
             <br>
             <br>
             <label for="tags" class="form">Tags</label>
             <br>
                 <select id="formInputFields" name="tags" class="form">
-                    <option value="Andere">Andere</option>
-                    <option value="Nordamerika">Nordamerika</option>
-                    <option value="Südamerika">Südamerika</option>
-                    <option value="Afrika">Afrika</option>
-                    <option value="Europa">Europa</option>
-                    <option value="Asien">Asien</option>
-                    <option value="Australien">Australien</option>
-                    <option value="Antarktis">Antarktis</option>
-                    <option value="Ozeanien">Ozeanien</option>
+                    <option value="Andere" <?=$selectedTag == 'Andere'?' selected="selected"' : '';?>'>Andere</option>
+                    <option value="Nordamerika" <?=$selectedTag == 'Nordamerika'?' selected="selected"' : '';?>'>Nordamerika</option>
+                    <option value="Südamerika" <?=$selectedTag == 'Südamerika'?' selected="selected"' : '';?>'>Südamerika</option>
+                    <option value="Afrika" <?=$selectedTag == 'Afrika'?' selected="selected"' : '';?>'>Afrika</option>
+                    <option value="Europa" <?=$selectedTag == 'Europa'?' selected="selected"' : '';?>'>Europa</option>
+                    <option value="Asien" <?=$selectedTag == 'Asien'?' selected="selected"' : '';?>'>Asien</option>
+                    <option value="Australien" <?=$selectedTag == 'Australien'?' selected="selected"' : '';?>'>Australien</option>
+                    <option value="Antarktis" <?=$selectedTag == 'Antarktis'?' selected="selected"' : '';?>'>Antarktis</option>
+                    <option value="Ozeanien" <?=$selectedTag == 'Ozeanien'?' selected="selected"' : '';?>'>Ozeanien</option>
                 </select>
                 <br>
                 <br>
@@ -33,10 +32,11 @@
                 <br>
                 <label for="blog" class="form">Text</label>
             <br>
-                <textarea name="blog" class="form" id="textarea"></textarea>
+                <textarea name="blog" class="form" id="textarea"><?= $blogContent ?></textarea>
             <br>
-            <a href="/profile/profile" id="buttonCancelBlog">Abbrechen</a>
-            <input id="buttonCreateBlog" type="submit" value="Beitrag erfassen"/>
+            <input type="hidden" name="id" value="<?=$blogID?>">
+            <a href="/profile/profile" class="button">Abbrechen</a>
+            <input class="button"  type="submit" value="<?= $buttonValue ?>"/>
             </p>
         </div>
     </form>

@@ -10,20 +10,17 @@ class profileBlogController
 {
     public function createBlog()
     {
-        if ($_SESSION["isSignedIn"] != null) {
-            $view = new View('createNewBlog');
-            $view->title = 'Beitrag erfassen';
-            $view->heading = 'Beitrag erfassen';
-            $view->username = $_SESSION["isSignedIn"];
-            $view->display($_SESSION["isSignedIn"]);
-        } else {
-            $_SESSION["isSignedIn"] = null;
-            $view = new View('user_login');
-            $view->title = 'Login';
-            $view->heading = 'Login';
-            $view->display($_SESSION["isSignedIn"]);
-            //$bla = array("sew",2,3);
-        }
+        $view = new View('createNewBlog');
+        $view->title = 'Beitrag erfassen';
+        $view->heading = 'Beitrag erfassen';
+        $view->blogTitle = '';
+        $view->blogContent = '';
+        $view->selectedTag = 'Andere';
+        $view->buttonValue = 'Beitrag erstellen';
+        $view->blogID = '0';
+        $view->action = '/profileBlog/createTheBlog';
+        $view->username = $_SESSION["isSignedIn"];
+        $view->display($_SESSION["isSignedIn"]);
     }
 
     public function createTheBlog()

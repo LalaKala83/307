@@ -45,7 +45,7 @@ class EntryRepository extends Repository
     public function readByContinent($continent)
     {
         // Query erstellen
-        $query = "SELECT * FROM {$this->tableName} WHERE titel LIKE ?";
+        $query = "SELECT * FROM {$this->tableName} WHERE kontinent LIKE ?";
         // Datenbankverbindung anfordern und, das Query "preparen" (vorbereiten)
         // und die Parameter "binden"
         $continent = '%' . $continent .'%';

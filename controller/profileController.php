@@ -55,4 +55,5 @@ class profileController
         require_once ("profileController.php");
         header("Location: /profile/profile");
     }
+
 }
