@@ -10,26 +10,29 @@
     </div>
     <div id="usernameAndPassword">
         <h2><?= $username?></h2>
-        <button class="buttonChangePassword">Passwort ändern</button>
+        <button class="button">Passwort ändern</button>
     </div>
     <div id="createNewBlog">
-        <a href="/profileBlog/createBlog" class="buttonChangePassword">Neuen Beitrag erfassen</a>
+        <a href="/profileBlog/createBlog" class="button">Neuen Beitrag erfassen</a>
     </div>
     <div id="blogbox">
         <?php if (empty($blogs)): ?>
             <div class="dhd">
-                <h2 class="item title">Hoopla! Kein Blog gefunden.</h2>
+                <h2>Hoopla! Kein Blog gefunden.</h2>
             </div>
         <?php else: ?>
             <?php foreach ($blogs as $blog):  ?>
                 <div class="panel-default">
-                    <div class="panel-heading"><?= $blog["titel"]; ?></div>
+                    <h2><?= $blog["titel"]; ?></h2>
                     <div class="panel-body">
                         <p class="tag">Kategorie: <?= $blog["kontinent"]; ?></p>
                         <p class="text"><?= $blog["inhalt"]; ?></p>
                     </div>
-                    <a href="/profile/deleteBlog?id=<?= $blog["id"]; ?>">
-                        <p>Beitrag löschen</p>
+                    <a class="button" href="/updateBlog/updateBlog?id=<?= $blog["id"]; ?>">
+                        Beitrag bearbeiten
+                    </a>
+                    <a class="button" href="/profile/deleteBlog?id=<?= $blog["id"]; ?>">
+                        Beitrag löschen
                     </a>
                 </div>
             <?php endforeach ?>

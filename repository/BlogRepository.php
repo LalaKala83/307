@@ -59,8 +59,6 @@ class BlogRepository extends Repository
         $query = "SELECT * FROM {$this->tableName} left join {$this->betweenTableName} on {$this->tableName}.id = {$this->betweenTableName}.fk_beitrag_id
          where {$this->betweenTableName}.fk_benutzername = ?";
 
-        //$query = "SELECT * FROM beitrag left join beitrag_benutzer on beitrag.id = beitrag_benutzer.fk_beitrag_id WHERE beitrag_benutzer.fk_benutzername = ?";
-
         $statement = ConnectionHandler::getConnection()->prepare($query);
         $statement->bind_param('s', $username);
 
@@ -85,4 +83,39 @@ class BlogRepository extends Repository
         return $rows;
     }
 
+    public function readBlogFromID($id){
+        $query = "SELECT {$this->tableName}.titel, {$this->tableName}.kontinent, {$this->tableName}.inhalt FROM {$this->tableName} where {$this->tableName}.id = ?";
+
+        $statement = ConnectionHandler::getConnection()->prepare($query);
+        $statement->bind_param('s', $id);
+
+        $statement->execute();
+
+        $result = $statement->get_result();
+        if (!$result) {
+            throw new Exception($statement->error);
+        }
+
+        $contentItems = null;
+
+        foreach($result as $content)
+        {
+            $contentItems = $content;
+        }
+
+        $result->close();
+
+        return $contentItems;
+    }
+
+    public function updateBlog($id, $title, $tag, $content){
+        $query = "UPDATE {$this->tableName} SET {$this->tableName}.titel = ?, {$this->tableName}.kontinent = ?, {$this->tableName}.inhalt = ? where {$this->tableName}.id = ?";
+
+        $statement = ConnectionHandler::getConnection()->prepare($query);
+        $statement->bind_param('ssss', $title, $tag, $content, $id);
+
+        if (!$statement->execute()) {
+            throw new Exception($statement->error);
+        }
+    }
 }

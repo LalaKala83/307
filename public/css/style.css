@@ -149,6 +149,7 @@ a {
     text-decoration: none;
     text-align: center;
     color: white;
+    font-size: 16px;
     font-family: 'Raleway', serif;
 }
 
@@ -400,6 +401,7 @@ a {
     border:1px solid black;
     border-left: 0px;
     border-right: 0px;
+    padding: 7px;
 }
 
 #deleteBlog {
