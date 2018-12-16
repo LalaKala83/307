@@ -37,6 +37,11 @@ class userController
             $view = new View('profile');
             $view->title = 'Mein Profil';
             $view->heading = 'Mein Profil';
+
+            require_once ("../repository/BlogRepository.php");
+            $blogRepository = new BlogRepository();
+            $blogs = $blogRepository->readAllBlogsFromUser($_SESSION["isSignedIn"]);
+            $view->blogs = $blogs;
             $view->username = htmlspecialchars($validusername);
             $view->display($_SESSION["isSignedIn"]);
         }
