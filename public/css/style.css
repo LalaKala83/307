@@ -38,6 +38,16 @@ button {
     font-size: 20px;
     font-family: sans-serif;
     color: white;
+    margin-top: 21px;
+    display: inline-block;
+    float: right;
+    padding: 14px 16px;
+}
+
+.buttonLogin {
+    font-size: 20px;
+    font-family: sans-serif;
+    color: white;
     margin-right: 70px;
     margin-top: 21px;
     display: inline-block;

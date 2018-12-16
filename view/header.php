@@ -12,7 +12,7 @@
 
     </head>
     <body>
-    <div class="boxRound buttonRight">
+    <div class="boxRound buttonLogin">
         <a href="/user/login">Anmelden</a>
     </div>
     <div id="page">
