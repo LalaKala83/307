@@ -38,6 +38,7 @@ class UserRepository extends Repository
         return $statement->insert_id;
     }
 
+
     public function verifyPW($username, $passwort){
         $query = "SELECT passwort FROM {$this->tableName} WHERE benutzername LIKE ?";
         // und die Parameter "binden"
@@ -100,7 +101,7 @@ class UserRepository extends Repository
 
     }
 
-    public function readByTitle($title)
+    public function isUserNameUnique($title)
     {
         // Query erstellen
         $query = "SELECT * FROM {$this->tableName} WHERE benutzername LIKE ?";
@@ -110,16 +111,17 @@ class UserRepository extends Repository
         $statement->bind_param('s', $title);
         // Das Statement absetzen
         $statement->execute();
-        // Resultat der Abfrage holen
         $result = $statement->get_result();
         if (!$result) {
             throw new Exception($statement->error);
         }
         // Ersten Datensatz aus dem Reultat holen
-        $row = $result->fetch_object();
-        // Datenbankressourcen wieder freigeben
-        $result->close();
-        // Den gefundenen Datensatz zurückgeben
-        return $row;
+        $row = $result->fetch_array();
+        if($row !== null) {
+            return false;
+        }
+        else {
+            return true;
+        }
     }
 }

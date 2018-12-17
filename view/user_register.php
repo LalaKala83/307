@@ -20,5 +20,11 @@
             <input id="button" class="boxRound buttonCenter" type="submit" value="Absenden"/>
             <br>
             <br>
+            <div id="textred">
+                <?php if (!empty($validation)):?>
+                    <?= $validation ?>
+                <?php endif; ?>
+            </div>
         </div>
     </form>
+

@@ -8,7 +8,7 @@
 
 class userController
 {
-
+    private $validation = null;
     public function index()
     {
         // Anfrage an die URI /user/create weiterleiten (HTTP 302)
@@ -80,6 +80,7 @@ class userController
         $view = new View('user_register');
         $view->title = 'Benutzer erstellen';
         $view->heading = 'Benutzer erstellen';
+        $view->validation = $this->validation;
         $view->display($_SESSION["isSignedIn"]);
     }
     public function save(){
@@ -89,6 +90,7 @@ class userController
 
         require ("../repository/UserRepository.php");
         $userRepository = new UserRepository();
+        if ($userRepository->isUserNameUnique($username)){
         $userRepository->create($username, $email, $password);
 
         $view = new View('profile');
@@ -97,7 +99,11 @@ class userController
 
         $_SESSION["isSignedIn"] = htmlspecialchars($username);
         $view->username = $username;
-        $view->display($_SESSION["isSignedIn"]);
+        $view->display($_SESSION["isSignedIn"]);}
+        else {
+            $this->validation = "Der Benutzername ist leider schon vergeeben";
+            $this->create();
+        }
     }
     public function change(){
         $view = new View('user_changePW');
