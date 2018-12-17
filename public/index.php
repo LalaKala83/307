@@ -7,7 +7,9 @@
  */
 
 session_start();
-//$_SESSION["loggedInUser"] != null;
+if(!isset($_SESSION["loggedInUser"])){
+    $_SESSION["loggedInUser"] = null;
+}
 require_once '../lib/Dispatcher.php';
 require_once '../lib/view.php';
 

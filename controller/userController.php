@@ -22,7 +22,7 @@ class userController
     }
 
     /**
-     * Zeigt das Login an
+     * Zeigt das Login an.
      */
 
     public function login(){
@@ -34,7 +34,8 @@ class userController
     }
 
     /**
-     * Verifiziert die Eingaben beim Login und füllt bei korrekten Eingaben die Session
+     * Verifiziert die Eingaben beim Login und füllt bei korrekten Eingaben die Session-Variable loggedInUser mit dem angemeldeten User.
+     * Bei falschen Eingaben werden diese entsprechend behandelt.
      * @throws Exception
      */
     public function authenticate(){
@@ -70,6 +71,10 @@ class userController
 
         }
     }
+
+    /**
+     * Logt den User aus. Session-Variable loggedInUser wird auf null gesetzt.
+     */
     public function logout() {
         $_SESSION["loggedInUser"] = null;
         $view = new View('default_index');
@@ -78,7 +83,9 @@ class userController
         $view->display($_SESSION["loggedInUser"]);
     }
 
-
+    /**
+     * Zeigt die Registrierung-Seite an.
+     */
     public function create()
     {
         $_SESSION["loggedInUser"] = null;
@@ -88,6 +95,12 @@ class userController
         $view->validation = $this->validation;
         $view->display($_SESSION["loggedInUser"]);
     }
+
+    /**
+     * Speichert bei validen Eingaben einen neuen User ein.
+     * Bei invalidem Benutzername wird die Registrierungs-Seite mit Validation-Text aufgerufen.
+     * @throws Exception
+     */
     public function save(){
         $email = $_POST["email"];
         $username = $_POST["username"];
@@ -95,7 +108,7 @@ class userController
 
         require ("../repository/UserRepository.php");
         $userRepository = new UserRepository();
-        if ($userRepository->isUserNameUnique($username)){
+        if ($userRepository->isUserNameUnique($username)) {
         $userRepository->create($username, $email, $password);
 
         $view = new View('profile');
@@ -104,12 +117,17 @@ class userController
 
         $_SESSION["loggedInUser"] = htmlspecialchars($username);
         $view->username = $username;
-        $view->display($_SESSION["loggedInUser"]);}
+        $view->display($_SESSION["loggedInUser"]);
+        }
         else {
             $this->validation = "Der Benutzername ist leider schon vergeeben";
             $this->create();
         }
     }
+
+    /**
+     * Zeigt die Passwort-Änderungsseite an.
+     */
     public function change(){
         $view = new View('user_changePW');
         $view->title = 'Passwort ändern';
@@ -117,6 +135,10 @@ class userController
         $view->display($_SESSION["loggedInUser"]);
     }
 
+    /**
+     * Ändert bei validen Pass
+     * @throws Exception
+     */
     public function changing(){
         $username = $_SESSION["loggedInUser"];
         $oldPW = $_POST["oldPW"];
