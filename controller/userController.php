@@ -9,6 +9,11 @@
 class userController
 {
     private $validation = null;
+
+    /**
+     * Die Funktion leitet die Anfrage durch die header-Funktion an die Funktion
+     * create derselben Klasse weiter.
+     */
     public function index()
     {
         // Anfrage an die URI /user/create weiterleiten (HTTP 302)
@@ -16,22 +21,22 @@ class userController
         exit();
     }
 
+    /**
+     * Zeigt das Login an
+     */
+
     public function login(){
-        $_SESSION["isSignedIn"] = null;
+        $_SESSION["loggedInUser"] = null;
         $view = new View('user_login');
         $view->title = 'Login';
         $view->heading = 'Login';
-        $view->display($_SESSION["isSignedIn"]);
+        $view->display($_SESSION["loggedInUser"]);
     }
 
-    public function loginWithValidation($validation){
-        $_SESSION["isSignedIn"] = null;
-        $view = new View('user_login');
-        $view->title = 'Login';
-        $view->heading = 'Login';
-        $view->display($_SESSION["isSignedIn"]);
-    }
-
+    /**
+     * Verifiziert die Eingaben beim Login und füllt bei korrekten Eingaben die Session
+     * @throws Exception
+     */
     public function authenticate(){
         $username = $_POST["username"];
         $password = $_POST["password"];
@@ -40,48 +45,48 @@ class userController
         $userrepo = new UserRepository();
         $validusername = $userrepo->verify($username, $password);
         if($validusername == $username) {
-            $_SESSION["isSignedIn"] = $validusername;
+            $_SESSION["loggedInUser"] = $validusername;
             $view = new View('profile');
             $view->title = 'Mein Profil';
             $view->heading = 'Mein Profil';
 
             require_once ("../repository/BlogRepository.php");
             $blogRepository = new BlogRepository();
-            $blogs = $blogRepository->readAllBlogsFromUser($_SESSION["isSignedIn"]);
+            $blogs = $blogRepository->readAllBlogsFromUser($_SESSION["loggedInUser"]);
             $view->blogs = $blogs;
             $view->username = htmlspecialchars($validusername);
-            $view->display($_SESSION["isSignedIn"]);
+            $view->display($_SESSION["loggedInUser"]);
             require_once ("profileController.php");
             header("Location: /profile/profile");
         }
         else {
-            $_SESSION["isSignedIn"] = null;
+            $_SESSION["loggedInUser"] = null;
             $view = new View('user_login');
             $view->title = 'Login';
             $view->heading = 'Login';
             if ($validusername)
                 $view->validation = $validusername;
-            $view->display($_SESSION["isSignedIn"]);
+            $view->display($_SESSION["loggedInUser"]);
 
         }
     }
     public function logout() {
-        $_SESSION["isSignedIn"] = null;
+        $_SESSION["loggedInUser"] = null;
         $view = new View('default_index');
         $view->title = 'Startseite';
         $view->heading = 'Startseite';
-        $view->display($_SESSION["isSignedIn"]);
+        $view->display($_SESSION["loggedInUser"]);
     }
 
 
     public function create()
     {
-        $_SESSION["isSignedIn"] = null;
+        $_SESSION["loggedInUser"] = null;
         $view = new View('user_register');
         $view->title = 'Benutzer erstellen';
         $view->heading = 'Benutzer erstellen';
         $view->validation = $this->validation;
-        $view->display($_SESSION["isSignedIn"]);
+        $view->display($_SESSION["loggedInUser"]);
     }
     public function save(){
         $email = $_POST["email"];
@@ -97,9 +102,9 @@ class userController
         $view->title = 'Mein Profil';
         $view->heading = 'Mein Profil';
 
-        $_SESSION["isSignedIn"] = htmlspecialchars($username);
+        $_SESSION["loggedInUser"] = htmlspecialchars($username);
         $view->username = $username;
-        $view->display($_SESSION["isSignedIn"]);}
+        $view->display($_SESSION["loggedInUser"]);}
         else {
             $this->validation = "Der Benutzername ist leider schon vergeeben";
             $this->create();
@@ -109,11 +114,11 @@ class userController
         $view = new View('user_changePW');
         $view->title = 'Passwort ändern';
         $view->heading = 'Passwort ändern';
-        $view->display($_SESSION["isSignedIn"]);
+        $view->display($_SESSION["loggedInUser"]);
     }
 
     public function changing(){
-        $username = $_SESSION["isSignedIn"];
+        $username = $_SESSION["loggedInUser"];
         $oldPW = $_POST["oldPW"];
         $newPW = $_POST["newPW"];
 
@@ -130,7 +135,7 @@ class userController
             $view = new View('incorrectPW');
             $view->title = 'Passwort inkorrekt';
             $view->heading = 'Passwort inkorrekt';
-            $view->display($_SESSION["isSignedIn"]);
+            $view->display($_SESSION["loggedInUser"]);
         }
 
     }

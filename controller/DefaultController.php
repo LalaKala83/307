@@ -17,6 +17,6 @@ class DefaultController
         $view = new View('default_index');
         $view->title = 'Startseite';
         $view->heading = 'Startseite';
-        $view->display($_SESSION["isSignedIn"]);
+        $view->display($_SESSION["loggedInUser"]);
     }
 }

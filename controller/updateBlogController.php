@@ -25,14 +25,14 @@ class updateBlogController
         $view = new View('createNewBlog');
         $view->title = 'Beitrag aktualisieren';
         $view->heading = 'Beitrag aktualisieren';
-        $view->username = $_SESSION["isSignedIn"];
+        $view->username = $_SESSION["loggedInUser"];
         $view->blogTitle = $blogItems["titel"];
         $view->blogContent = $blogItems["inhalt"];
         $view->selectedTag = $blogItems["kontinent"];
         $view->blogID = $blogId;
         $view->buttonValue = 'Beitrag aktualisieren';
         $view->action = '/updateBlog/updateTheBlog';
-        $view->display($_SESSION["isSignedIn"]);
+        $view->display($_SESSION["loggedInUser"]);
     }
 
     /**

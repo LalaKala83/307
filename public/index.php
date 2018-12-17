@@ -6,10 +6,8 @@
  * Time: 11:03
  */
 
-$isSignedIn = null;
-
 session_start();
-//$_SESSION["isSignedIn"] != null;
+//$_SESSION["loggedInUser"] != null;
 require_once '../lib/Dispatcher.php';
 require_once '../lib/view.php';
 

@@ -25,7 +25,7 @@ class experienceController
         $view = new View('experience');
         $view->title = 'Entdecken';
         $view->heading = 'Entdecken';
-        $view->display($_SESSION["isSignedIn"]);
+        $view->display($_SESSION["loggedInUser"]);
     }
 
     /**
@@ -50,7 +50,7 @@ class experienceController
         $view->title = $continent;
         $view->heading = $continent;
         $view->result = $result;
-        $view->display($_SESSION["isSignedIn"]);
+        $view->display($_SESSION["loggedInUser"]);
     }
 
     private function getContinent($continent){

@@ -27,7 +27,7 @@ class entryController
             $view = new View('search');
             $view->title = 'Eintrag suchen';
             $view->heading = 'Eintrag suchen';
-            $view->display($_SESSION["isSignedIn"]);
+            $view->display($_SESSION["loggedInUser"]);
     }
 
     /**
@@ -50,7 +50,7 @@ class entryController
         $view = new View('entry_alone');
         $view->title = $result["titel"];
         $view->blog = $result;
-        $view->display($_SESSION["isSignedIn"]);
+        $view->display($_SESSION["loggedInUser"]);
 
     }
 
@@ -69,6 +69,6 @@ class entryController
         $view->title = 'Gefundene Einträge';
         $view->heading = 'Gefundene Einträge';
         $view->result = $result;
-        $view->display($_SESSION["isSignedIn"]);
+        $view->display($_SESSION["loggedInUser"]);
     }
 }

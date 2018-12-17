@@ -31,9 +31,9 @@ class View{
     }
 
 
-    public function display($isSignedIn)
+    public function display($loggedInUser)
     {
-        if ($isSignedIn != null) {
+        if ($loggedInUser != null) {
             extract($this->properties);
             require '../view/header_signedUp.php';
             require $this->viewfile;

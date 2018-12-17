@@ -24,9 +24,9 @@ class profileBlogController
         $view->buttonValue = 'Beitrag erstellen';
         $view->blogID = '0';
         $view->action = '/profileBlog/createTheBlog';
-        $view->username = $_SESSION["isSignedIn"];
+        $view->username = $_SESSION["loggedInUser"];
         $view->validationMessage = $this->validation;
-        $view->display($_SESSION["isSignedIn"]);
+        $view->display($_SESSION["loggedInUser"]);
     }
 
     /**
@@ -45,7 +45,7 @@ class profileBlogController
         require_once ("../repository/BlogRepository.php");
         $blogRepository = new BlogRepository();
         $id = $blogRepository->create($title, $tag, $image, $text);
-        $blogRepository->setInBetweenTable($id, $_SESSION["isSignedIn"]);
+        $blogRepository->setInBetweenTable($id, $_SESSION["loggedInUser"]);
 
         require_once ("profileController.php");
         header("Location: /profile/profile");

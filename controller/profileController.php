@@ -24,24 +24,24 @@ class profileController
      * @throws Exception
      */
     public function profile() {
-        if ($_SESSION["isSignedIn"] != null){
+        if ($_SESSION["loggedInUser"] != null){
             $view = new View('profile');
             $view->title = 'Mein Profil';
             $view->heading = 'Mein Profil';
 
             require_once ("../repository/BlogRepository.php");
             $blogRepository = new BlogRepository();
-            $blogs = $blogRepository->readAllBlogsFromUser($_SESSION["isSignedIn"]);
+            $blogs = $blogRepository->readAllBlogsFromUser($_SESSION["loggedInUser"]);
             $view->blogs = $blogs;
-            $view->username = $_SESSION["isSignedIn"];
-            $view->display($_SESSION["isSignedIn"]);
+            $view->username = $_SESSION["loggedInUser"];
+            $view->display($_SESSION["loggedInUser"]);
         }
         else {
-            $_SESSION["isSignedIn"] = null;
+            $_SESSION["loggedInUser"] = null;
             $view = new View('user_login');
             $view->title = 'Login';
             $view->heading = 'Login';
-            $view->display($_SESSION["isSignedIn"]);
+            $view->display($_SESSION["loggedInUser"]);
         }
     }
 
@@ -54,7 +54,7 @@ class profileController
         $view->title = 'Beitrag löschen';
         $view->heading = 'Beitrag löschen';
         $view->blogID = $blogId;
-        $view->display($_SESSION["isSignedIn"]);
+        $view->display($_SESSION["loggedInUser"]);
     }
 
     /**
