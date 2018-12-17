@@ -8,6 +8,8 @@
 
 class profileBlogController
 {
+    private $validation = null;
+
     public function createBlog()
     {
         $view = new View('createNewBlog');
@@ -20,6 +22,7 @@ class profileBlogController
         $view->blogID = '0';
         $view->action = '/profileBlog/createTheBlog';
         $view->username = $_SESSION["isSignedIn"];
+        $view->validationMessage = $this->validation;
         $view->display($_SESSION["isSignedIn"]);
     }
 
@@ -46,13 +49,17 @@ class profileBlogController
     }
 
     private function areInputsValid($title, $tag, $text){
-        if (empty($title) or empty($tag) or empty($text))
+        if (empty($title)) {
+            $this->validation = "Die Eingabefelder dürfen nicht leer sein.";
             return false;
+        }
         else{
             if (!is_string($title) or !is_string($tag) or !is_string($text)){
+                $this->validation = "Die Eingabefelder dürfen nicht leer sein.";
                 return false;
             }
             else {
+
                 return true;
             }
         }
