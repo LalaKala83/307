@@ -1,5 +1,5 @@
 <h1><?= $heading?></h1>
-<form action="authenticate" method="post">
+<form action="authenticate" method="post" autocomplete="off">
     <div data-html="true" id="login">
             <label for="username">Benutzername</label>
             <br>
@@ -8,7 +8,7 @@
             <br>
             <label for="password">Passwort</label>
             <br>
-            <input id="password" name="password" type="password">
+            <input id="password" name="password" type="password" >
             <br>
             <br>
             <div id="textred">

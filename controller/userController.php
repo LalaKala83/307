@@ -95,22 +95,27 @@ class userController
         $email = $_POST["email"];
         $username = $_POST["username"];
         $password = $_POST["password"];
-
+        if(is_string($username) and is_string($email)){
         require ("../repository/UserRepository.php");
         $userRepository = new UserRepository();
-        if ($userRepository->isUserNameUnique($username)) {
-        $userRepository->create($username, $email, $password);
+            if ($userRepository->isUserNameUnique($username)) {
+                $userRepository->create($username, $email, $password);
 
-        $view = new View('profile');
-        $view->title = 'Mein Profil';
-        $view->heading = 'Mein Profil';
+                $view = new View('profile');
+                $view->title = 'Mein Profil';
+                $view->heading = 'Mein Profil';
 
-        $_SESSION["loggedInUser"] = htmlspecialchars($username);
-        $view->username = $username;
-        $view->display($_SESSION["loggedInUser"]);
+                $_SESSION["loggedInUser"] = htmlspecialchars($username);
+                $view->username = $username;
+                $view->display($_SESSION["loggedInUser"]);
+            }
+            else {
+                $this->validation = "Der Benutzername ist leider schon vergeben";
+                $this->create();
+            }
         }
         else {
-            $this->validation = "Der Benutzername ist leider schon vergeeben";
+            $this->validation = "Bitte Benutzername und E-Mail valid eingeben";
             $this->create();
         }
     }

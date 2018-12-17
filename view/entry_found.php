@@ -12,5 +12,5 @@
         <p>Nicht vorhanden</p>
     <?php endif ?>
 </div>
-    <a href="search" id="buttonCreateBlog">Zurück zur Suche</a>
+    <a href="search" class="boxRound" id="buttonCreateBlog">Zurück zur Suche</a>
 </div>

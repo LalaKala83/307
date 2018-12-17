@@ -9,7 +9,7 @@ return array(
     // Datebankkonfiguration
     'database' => array(
         'host'     => '127.0.0.1:3307',
-        'username' => 'root',
+        'username' => 'website-client',
         'passwort' => '',
         'database' => 'travelgram',
     ),

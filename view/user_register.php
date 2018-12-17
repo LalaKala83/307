@@ -1,5 +1,5 @@
     <h1><?= $title?></h1>
-    <form action="save" method="post">
+    <form action="save" method="post" autocomplete="off">
         <div data-html="true" id="login">
             <p>
             <label for="username">Benutzername</label>
