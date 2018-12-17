@@ -35,7 +35,7 @@ button {
 }
 .buttonRight {
     font-size: 20px;
-    font-family: sans-serif;
+    font-family: 'Raleway', sans-serif;
     color: white;
     margin-top: 21px;
     display: inline-block;
@@ -88,6 +88,9 @@ button {
      min-height: 800px;
      padding: 1px;
  }
+#image img{
+    width: 100%;
+}
 
 #footer {
     background: #333;
@@ -143,6 +146,172 @@ button {
 #menueicon img {
     display: none;
     height: 40px;
+}#containerProfilepicture {
+     border:1px solid black;
+     height: 140px;
+     width: 140px;
+     display: inline-block;
+     float: left;
+ }
+
+#containerProfilepicture:hover {
+    background: #333;
+
+}
+
+#containerProfilepicture:hover  textProfilepicture {
+    color: white;
+}
+
+.textProfilepicture {
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+#usernameAndPassword {
+    float: left;
+    margin-left: 90px;
+    min-height: 20px;
+    width: 150px;
+}
+
+.buttonChangePassword {
+    color: white;
+    background: #333;
+    border-style: none;
+    padding: 6px;
+}
+
+.buttonChangePassword:hover {
+    background: black;
+}
+
+.divExperience {
+    float: left;
+    background: #333;
+    width: 30%;
+    height: 120px;
+    text-align: center;
+    margin-left: 1.5%;
+    margin-right: 1.5%;
+    margin-bottom: 30px;
+}
+
+.divExperience:hover {
+    background: black;
+}
+
+.divExperienceText {
+    color: white;
+}
+
+.buttonsExperience {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border-style: none;
+}
+
+#searchresults {
+    margin-top: 10px;
+    width: 100%;
+    min-height: 200px;
+    border:1px solid black;
+    padding: 3px;
+}
+
+#createNewBlog {
+    margin-top: 250px;
+    display: block;
+    min-height: 20px;
+    width: 200px;
+
+}
+
+#blogbox {
+    margin-top: 10px;
+    width: 100%;
+    min-height: 400px;
+}
+
+.form {
+    float: left;
+}
+
+.formInputFields {
+    width: 50%;
+}
+
+#blog {
+    width: 100%;
+    height: 60%;
+}
+
+#buttonCreateBlog {
+    margin-top: 10px;
+    margin-bottom: 30px;
+    color: white;
+    background: #333;
+    border-style: none;
+    padding: 6px;
+    float: right;
+    font-size: 16px;
+}
+
+#buttonCreateBlog:hover {
+    background: black;
+}
+
+#buttonCancelBlog {
+    margin-top: 10px;
+    margin-bottom: 30px;
+    color: white;
+    background: #333;
+    border-style: none;
+    padding: 6px;
+    float: left;
+    font-size: 16px;
+}
+
+#buttonCancelBlog:hover {
+    background: black;
+}
+
+.uploadFileContainer {
+    width: 100%;
+}
+
+.panel-default {
+    border:1px solid black;
+    border-left: 0px;
+    border-right: 0px;
+    padding: 7px;
+}
+
+#deleteBlog {
+    width: 100%;
+    text-align: center;
+}
+
+.buttonDefault {
+    color: white;
+    background: #333;
+    border-style: none;
+    display: inline-block;
+    padding: 8px 10px;
+    font-size: 1em;
+    font-family: 'Raleway', sans-serif;
+    margin: 5px 5px 0 0;
+    cursor: pointer;
+}
+
+input.buttonDefault {
+    padding: 11px 10px 10.5px;
+}
+
+.buttonDefault:hover {
+    background: black;
 }
 
 h1 {
@@ -281,170 +450,4 @@ a {
     }
 }
 
-#containerProfilepicture {
-    border:1px solid black;
-    height: 140px;
-    width: 140px;
-    display: inline-block;
-    float: left;
-}
 
-#containerProfilepicture:hover {
-    background: #333;
-
-}
-
-#containerProfilepicture:hover  p.textProfilepicture {
-    color: white;
-}
-
-.textProfilepicture {
-    text-align: center;
-    margin-top: 40px;
-    margin-bottom: 40px;
-}
-
-#usernameAndPassword {
-    float: left;
-    margin-left: 90px;
-    min-height: 20px;
-    width: 150px;
-}
-
-.buttonChangePassword {
-    color: white;
-    background: #333;
-    border-style: none;
-    padding: 6px;
-}
-
-.buttonChangePassword:hover {
-    background: black;
-}
-
-.divExperience {
-    float: left;
-    background: #333;
-    width: 30%;
-    height: 120px;
-    text-align: center;
-    margin-left: 1.5%;
-    margin-right: 1.5%;
-    margin-bottom: 30px;
-}
-
-.divExperience:hover {
-    background: black;
-}
-
-.divExperienceText {
-    color: white;
-}
-
-.buttonsExperience {
-    width: 100%;
-    height: 100%;
-    background: transparent;
-    border-style: none;
-}
-
-#searchresults {
-    margin-top: 10px;
-    width: 100%;
-    min-height: 200px;
-    border:1px solid black;
-    padding: 3px;
-}
-
-#createNewBlog {
-    margin-top: 250px;
-    display: block;
-    min-height: 20px;
-    width: 200px;
-
-}
-
-#blogbox {
-    margin-top: 10px;
-    width: 100%;
-    min-height: 400px;
-}
-
-.form {
-    float: left;
-}
-
-#formInputFields {
-    width: 50%;
-}
-
-#textarea {
-    width: 100%;
-    height: 60%;
-}
-
-#buttonCreateBlog {
-    margin-top: 10px;
-    margin-bottom: 30px;
-    color: white;
-    background: #333;
-    border-style: none;
-    padding: 6px;
-    float: right;
-    font-size: 16px;
-}
-
-#buttonCreateBlog:hover {
-    background: black;
-}
-
-#buttonCancelBlog {
-    margin-top: 10px;
-    margin-bottom: 30px;
-    color: white;
-    background: #333;
-    border-style: none;
-    padding: 6px;
-    float: left;
-    font-size: 16px;
-}
-
-#buttonCancelBlog:hover {
-    background: black;
-}
-
-.uploadFileContainer {
-    width: 100%;
-}
-
-.panel-default {
-    border:1px solid black;
-    border-left: 0px;
-    border-right: 0px;
-    padding: 7px;
-}
-
-#deleteBlog {
-    width: 100%;
-    text-align: center;
-}
-
-.buttonDefault {
-    color: white;
-    background: #333;
-    border-style: none;
-    display: inline-block;
-    padding: 8px 10px;
-    font-size: 1em;
-    font-family: 'Raleway', sans-serif;
-    margin: 5px 5px 0 0;
-    cursor: pointer;
-}
-
-input.buttonDefault {
-    padding: 11px 10px 10.5px;
-}
-
-.buttonDefault:hover {
-    background: black;
-}

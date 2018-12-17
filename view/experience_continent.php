@@ -1,5 +1,5 @@
 <div id="image">
-    <img src="/images/c.jpg" width="100%">
+    <img src="/images/c.jpg" alt="Bild, das eine schöne Landschaft zeigt">
 </div>
 <div id="body">
     <h1><?= $title ?></h1>
@@ -13,4 +13,5 @@
         <?php endif ?>
     </div>
     <a href="/experience/experience" class="buttonRight boxRound">Zurück zu Entdecken</a>
+</div>
 

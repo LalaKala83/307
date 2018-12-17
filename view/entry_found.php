@@ -1,9 +1,8 @@
 <div id="image">
-    <img src="/images/c.jpg" width="100%">
+    <img src="/images/c.jpg" alt="Bild, das eine schöne Landschaft zeigt">
 </div>
 <div id="body">
     <h1><?= $title ?></h1>
-    <form class="form-horizontal"
     <div id="searchresults">
     <?php if (!empty($result)): ?>
         <?php foreach ($result as $row): ?>
@@ -14,3 +13,4 @@
     <?php endif ?>
 </div>
     <a href="search" id="buttonCreateBlog">Zurück zur Suche</a>
+</div>

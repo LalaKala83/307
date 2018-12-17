@@ -1,7 +1,6 @@
 <h1><?= $heading?></h1>
 <form action="authenticate" method="post">
     <div data-html="true" id="login">
-        <p>
             <div id="textred">
                 <?php if (!empty($validation)): ?>
                     <p><?= $validation ?></p>
@@ -23,6 +22,5 @@
             <div class="boxRound buttonRight">
                 <a href="/user/create">Registrieren</a>
             </div>
-        </p>
     </div>
 </form>

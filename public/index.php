@@ -9,7 +9,7 @@
 $isSignedIn = null;
 
 session_start();
-$_SESSION["isSignedIn"] != null;
+//$_SESSION["isSignedIn"] != null;
 require_once '../lib/Dispatcher.php';
 require_once '../lib/view.php';
 

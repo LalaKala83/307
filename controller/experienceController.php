@@ -64,7 +64,7 @@ class experienceController
             case "australia":
                 return "Australien";
             default:
-                return "other";
+                return "Andere";
         }
     }
 }

@@ -1,11 +1,11 @@
 <div id="image">
-    <img src="/images/d.jpg" width="100%">
+    <img src="/images/d.jpg" alt="Bild, das eine schöne Landschaft zeigt">
 </div>
 <div id="body">
     <h1><?= $title ?></h1>
     <div id="containerProfilepicture">
-        <button class="buttonsExperience boxRound">
-            <p class="textProfilepicture" id="p">Profilbild hinzufügen</p>
+        <button class="buttonsExperience boxRound ">
+            Profilbild hinzufügen
         </button>
     </div>
     <div id="usernameAndPassword">

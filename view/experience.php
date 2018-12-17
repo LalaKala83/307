@@ -1,5 +1,5 @@
 <div id="image">
-    <img src="/images/b.jpg" width="100%">
+    <img src="/images/b.jpg" alt="Bild, das eine schöne Landschaft zeigt">
 </div>
 <div id="body">
     <h1><?= $title ?></h1>

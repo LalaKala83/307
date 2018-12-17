@@ -30,6 +30,7 @@ class profileBlogController
         $image = $_POST["fileToUpload"];
         $text = $_POST["blog"];
 
+        if($this->areInputsValid($title, $tag, $text)){
         require_once ("../repository/BlogRepository.php");
         $blogRepository = new BlogRepository();
         $id = $blogRepository->create($title, $tag, $image, $text);
@@ -37,5 +38,24 @@ class profileBlogController
 
         require_once ("profileController.php");
         header("Location: /profile/profile");
+        }
+        else {
+            $this->createBlog();
+
+        }
+    }
+
+    private function areInputsValid($title, $tag, $text){
+        if (empty($title) or empty($tag) or empty($text))
+            return false;
+        else{
+            if (!is_string($title) or !is_string($tag) or !is_string($text)){
+                return false;
+            }
+            else {
+                return true;
+            }
+        }
+
     }
 }
