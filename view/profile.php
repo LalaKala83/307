@@ -17,9 +17,7 @@
     </div>
     <div id="blogbox">
         <?php if (empty($blogs)): ?>
-            <div class="dhd">
-                <h2>Hoppla! Kein Blog gefunden.</h2>
-            </div>
+             <h2>Hoppla! Kein Blog gefunden.</h2>
         <?php else: ?>
             <?php foreach ($blogs as $blog):  ?>
                 <div class="panel-default">

@@ -37,15 +37,11 @@ class entryController
      * @throws Exception
      */
     public function show(){
-        $uri = $_SERVER['REQUEST_URI'];
-        $uri = strtok($uri, '?');
-        $uri = trim($uri, '/');
-        $uriFragments = explode('/', $uri);
-        $important = end($uriFragments);
+        $id = $_GET['id'];
 
         require_once ("../repository/EntryRepository.php");
         $entryRepo = new EntryRepository();
-        $result =  $entryRepo->readById($important);
+        $result =  $entryRepo->readById($id);
 
         $view = new View('entry_alone');
         $view->title = $result["titel"];

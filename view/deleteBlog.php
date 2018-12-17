@@ -1,4 +1,4 @@
-<div id="deleteBlog">
+<div id="commitView">
     <h1><?= $title ?></h1>
     <p>Wollen Sie den Beitrag wirklich löschen?</p>
     <form action="/profile/deleteTheBlog" method="post">

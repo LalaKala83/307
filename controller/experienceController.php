@@ -35,13 +35,9 @@ class experienceController
      * @throws Exception
      */
     public function show(){
-        $uri = $_SERVER['REQUEST_URI'];
-        $uri = strtok($uri, '?');
-        $uri = trim($uri, '/');
-        $uriFragments = explode('/', $uri);
-        $important = end($uriFragments);
+        $id = $_GET['continent'];
 
-        $continent = $this->getContinent($important);
+        $continent = $this->getContinent($id);
 
         require_once ("../repository/EntryRepository.php");
         $entryRepo = new EntryRepository();
