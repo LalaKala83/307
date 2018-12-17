@@ -21,6 +21,7 @@ html {
     border-radius: 3px 15px 3px 15px;
     background-color: #333;
 }
+
 .kontinent{
     font-family: 'Raleway', sans-serif;
     text-align: center;
@@ -451,4 +452,7 @@ a {
     }
 }
 
-
+.zitat {
+    font-family: 'Amatic SC', cursive;
+    color: white;
+}

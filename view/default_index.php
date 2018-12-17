@@ -9,4 +9,6 @@
 <p>...einer Exkursion im sehenswerten Alaska...</p>
     <img class="picture" src="/images/g.jpg" alt="Bild, das ein Stadion zeigt">
 <p>...oder einem Abstecher in das legendäre Camp Nou in Barcelona, zu.</p>
+<div class="boxRound zitat">
 <h1>“Traveling – it leaves you speechless, then turns you into a storyteller."</h1>
+</div>
