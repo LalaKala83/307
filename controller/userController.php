@@ -136,7 +136,8 @@ class userController
     }
 
     /**
-     * Ändert bei validen Pass
+     * Ändert bei valider Passwort-Eingabe das Passwort, anderfalls wird eine Validierungs-Message angezeigt
+     * und auf die Seite "incorrectPW" umgeleitet.
      * @throws Exception
      */
     public function changing(){

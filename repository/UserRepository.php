@@ -14,9 +14,9 @@ class UserRepository extends Repository
      */
     protected $tableName = 'benutzer';
     /**
-     * Erstellt einen neuen benutzer mit den gegebenen Werten.
+     * Erstellt einen neuen Benutzer mit den gegebenen Werten.
      *
-     * Das Passwort wird vor dem ausführen des Queries noch mit dem SHA1
+     * Das Passwort wird vor dem Ausführen des Queries noch mit dem BCRYPT
      *  Algorythmus gehashed.
      *
      * @param  $username Wert für die Spalte benutzername
@@ -38,7 +38,13 @@ class UserRepository extends Repository
         return $statement->insert_id;
     }
 
-
+    /**
+     * Verifiziert das Passwort mit Hilfe des Usernames.
+     * @param $username Der Username des zu überprüfenden Passworts
+     * @param $passwort Das eingebene Passwort
+     * @return bool Stimmt das Passwort mit dem aus der Datenbank überein?
+     * @throws Exception Wenn das Statement nicht ausgeführt werden kann.
+     */
     public function verifyPW($username, $passwort){
         $query = "SELECT passwort FROM {$this->tableName} WHERE benutzername LIKE ?";
         // und die Parameter "binden"
@@ -61,6 +67,12 @@ class UserRepository extends Repository
         return false;
     }
 
+    /**
+     * Ändert das Passwort
+     * @param $username Der zugehörige Username des zu ändernde Passwort
+     * @param $passwort Das neue Passwort
+     * @throws Exception Wenn das Statement nicht ausgeführt werden kann.
+     */
     public function changePW($username, $passwort){
         $passwort = password_hash($passwort, PASSWORD_BCRYPT);
         $query = "UPDATE {$this->tableName} SET {$this->tableName}.passwort = ? WHERE benutzername = ?";
@@ -70,6 +82,14 @@ class UserRepository extends Repository
             throw new Exception($statement->error);
         }
     }
+
+    /**
+     * Prüft die Login-Daten
+     * @param $username Der zu überprüfende Username
+     * @param $passwort Das zu überprüfende Passwort
+     * @return string Bei Übereinstimmung wird der Username zurückgegeben, sonst der Validierungstext
+     * @throws Exception Wenn das Statement nicht ausgeführt werden kann.
+     */
     public function verify($username, $passwort){
         // Query erstellen
         $query = "SELECT passwort FROM {$this->tableName} WHERE benutzername LIKE ?";
@@ -101,14 +121,20 @@ class UserRepository extends Repository
 
     }
 
-    public function isUserNameUnique($title)
+    /**
+     * Überprüft, ob der Username einzigartig ist.
+     * @param $username Der zu überprüfende Username
+     * @return bool Is der Username einzigartig?
+     * @throws Exception
+     */
+    public function isUserNameUnique($username)
     {
         // Query erstellen
         $query = "SELECT * FROM {$this->tableName} WHERE benutzername LIKE ?";
         // Datenbankverbindung anfordern und, das Query "preparen" (vorbereiten)
         // und die Parameter "binden"
         $statement = ConnectionHandler::getConnection()->prepare($query);
-        $statement->bind_param('s', $title);
+        $statement->bind_param('s', $username);
         // Das Statement absetzen
         $statement->execute();
         $result = $statement->get_result();
