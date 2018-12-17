@@ -8,7 +8,9 @@
 
 class experienceController
 {
-
+    /**
+     * Leitet die Anfrag auf die Methode search der Klasse entryController weiter.
+     */
     public function index()
     {
         // Anfrage an die URI /user/search weiterleiten (HTTP 302)
@@ -16,6 +18,9 @@ class experienceController
         exit();
     }
 
+    /**
+     * Erstellt eine neue View zum Entdecken von Beiträgen.
+     */
     public function experience() {
         $view = new View('experience');
         $view->title = 'Entdecken';
@@ -23,6 +28,10 @@ class experienceController
         $view->display($_SESSION["isSignedIn"]);
     }
 
+    /**
+     * 
+     * @throws Exception
+     */
     public function show(){
         $uri = $_SERVER['REQUEST_URI'];
         $uri = strtok($uri, '?');

@@ -8,6 +8,13 @@
 
 class updateBlogController
 {
+    /**
+     * Erstellt eine neue View zum aktualisieren eines Eintrages und
+     * übergibt der View dazu die Usereingaben, die dieser beim Erstellen
+     * des Blogs betätigt hat. Diese liest er mithilfe der Beitrags-Id aus
+     * der Datenbank.
+     * @throws Exception
+     */
     public function updateBlog() {
         $blogId = $_GET['id'];
 
@@ -28,6 +35,11 @@ class updateBlogController
         $view->display($_SESSION["isSignedIn"]);
     }
 
+    /**
+     * Erhält die Usereingaben und aktualisiert mithilfe von diesen den bereits
+     * erstellten Blog.
+     * @throws Exception
+     */
     public function updateTheBlog() {
         $title = $_POST["title"];
         $tag = $_POST["tags"];

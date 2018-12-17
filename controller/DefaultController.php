@@ -9,9 +9,11 @@
 class DefaultController
 {
 
+    /**
+     * Diese Funktion ruft die Default-Seite, in unserem Fall das Home, auf.
+     */
     public function index()
     {
-        global $isSignedIn;
         $view = new View('default_index');
         $view->title = 'Startseite';
         $view->heading = 'Startseite';

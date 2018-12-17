@@ -8,12 +8,21 @@
 
 class profileController
 {
-
+    /**
+     * Ruft die Funktion profile derselben Klasse auf.
+     */
     public function index()
     {
         $this->profile();
     }
 
+    /**
+     * Je nachdem, ob der User angemeldet ist oder nicht, wird das Profil oder
+     * das Anmeldefenster angezeigt. Falls dieser schon eingelogt ist, werden
+     * zusätzlich noch alle erstellten Beiträge dieses Users aus der Datenbank
+     * gelesen und im Profil aufgelistet.
+     * @throws Exception
+     */
     public function profile() {
         if ($_SESSION["isSignedIn"] != null){
             $view = new View('profile');
@@ -36,6 +45,9 @@ class profileController
         }
     }
 
+    /**
+     * Erstellt eine neue View, in welcher ein Eintrag gelöscht werden kann.
+     */
     public function deleteBlog() {
         $blogId = $_GET['id'];
         $view = new View('deleteBlog');
@@ -45,6 +57,10 @@ class profileController
         $view->display($_SESSION["isSignedIn"]);
     }
 
+    /**
+     * Diese Funktion löscht den Eintrag mit der erhaltenen ID aus der Datenbank.
+     * @throws Exception
+     */
     public function deleteTheBlog() {
         $id = $_POST['id'];
         require_once ("../repository/BlogRepository.php");

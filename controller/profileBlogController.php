@@ -10,6 +10,9 @@ class profileBlogController
 {
     private $validation = null;
 
+    /**
+     * Es wird eine neue View erstellt, in welcher ein neuer Beitrag erstellt werden kann.
+     */
     public function createBlog()
     {
         $view = new View('createNewBlog');
@@ -26,6 +29,11 @@ class profileBlogController
         $view->display($_SESSION["isSignedIn"]);
     }
 
+    /**
+     * Diese Funktion fügt die Eingaben für einen neuen Beitrag in die Datenbank ein.
+     * Zuvor werden diese jedoch noch auf ihre Valididät geprüft.
+     * @throws Exception
+     */
     public function createTheBlog()
     {
         $title = $_POST["title"];
@@ -48,6 +56,14 @@ class profileBlogController
         }
     }
 
+    /**
+     * Es wird überprüft, ob die Eingabefelder leer gelassen wurden und gibt
+     * eine entsprechende Meldung zurück.
+     * @param $title
+     * @param $tag
+     * @param $text
+     * @return bool
+     */
     private function areInputsValid($title, $tag, $text){
         if (empty($title)) {
             $this->validation = "Die Eingabefelder dürfen nicht leer sein.";

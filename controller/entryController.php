@@ -8,13 +8,21 @@
 
 class entryController
 {
+    /**
+     * Die Funktion leitet die Anfrage durch die header-Funktion an die Funktion
+     * search derselben Klasse weiter.
+     */
     public function index()
     {
-        // Anfrage an die URI /user/search weiterleiten (HTTP 302)
+        // Anfrage an die URI /entry/search weiterleiten (HTTP 302)
         header('Location: /entry/search');
         exit();
     }
 
+    /**
+     * Die View, wo die Suche dargestellt wird, wird mit den entsprechenden Informationen
+     * dargestellt.
+     */
     public function search() {
             $view = new View('search');
             $view->title = 'Eintrag suchen';
@@ -22,6 +30,12 @@ class entryController
             $view->display($_SESSION["isSignedIn"]);
     }
 
+    /**
+     *Die Funktion zeigt einen bestimmten Entry an.
+     * Es wird auf die Klasse EntryRepository zugegriffen, welche
+     * Datensätze aus der Datenbank liest.
+     * @throws Exception
+     */
     public function show(){
         $uri = $_SERVER['REQUEST_URI'];
         $uri = strtok($uri, '?');
@@ -40,6 +54,11 @@ class entryController
 
     }
 
+    /**
+     * Die Funktion liest die Datensätze aus der Datenbank, die der Suchanfrage entsprechen
+     * und gibt die Ergebnisse in einer neuen View aus.
+     * @throws Exception
+     */
     public function find() {
         $title = $_POST['title'];
         require_once ("../repository/EntryRepository.php");
