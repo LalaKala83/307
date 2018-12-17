@@ -23,10 +23,10 @@
         <?php else: ?>
             <?php foreach ($blogs as $blog):  ?>
                 <div class="panel-default">
-                    <h2><?= $blog["titel"]; ?></h2>
+                    <h2><?= htmlspecialchars($blog["titel"]); ?></h2>
                     <div class="panel-body">
-                        <p class="tag">Kategorie: <?= $blog["kontinent"]; ?></p>
-                        <p class="text"><?= $blog["inhalt"]; ?></p>
+                        <p class="tag">Kategorie: <?= htmlspecialchars($blog["kontinent"]); ?></p>
+                        <p class="text"><?= htmlspecialchars($blog["inhalt"]); ?></p>
                     </div>
                     <a class="buttonDefault boxRound" href="/updateBlog/updateBlog?id=<?= $blog["id"]; ?>">
                         Beitrag bearbeiten

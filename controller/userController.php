@@ -47,16 +47,6 @@ class userController
         $validusername = $userrepo->verify($username, $password);
         if($validusername == $username) {
             $_SESSION["loggedInUser"] = $validusername;
-            $view = new View('profile');
-            $view->title = 'Mein Profil';
-            $view->heading = 'Mein Profil';
-
-            require_once ("../repository/BlogRepository.php");
-            $blogRepository = new BlogRepository();
-            $blogs = $blogRepository->readAllBlogsFromUser($_SESSION["loggedInUser"]);
-            $view->blogs = $blogs;
-            $view->username = htmlspecialchars($validusername);
-            $view->display($_SESSION["loggedInUser"]);
             require_once ("profileController.php");
             header("Location: /profile/profile");
         }

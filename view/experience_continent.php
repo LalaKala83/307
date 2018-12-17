@@ -6,7 +6,7 @@
     <div id="searchresults">
         <?php if (!empty($result)): ?>
             <?php foreach ($result as $row): ?>
-                <a href="/entry/show/<?=$row["id"]; ?>" class="boxRound buttonSearch" ><?= $row["titel"]; ?></a>
+                <a href="/entry/show/<?=$row["id"]; ?>" class="boxRound buttonSearch" ><?= htmlspecialchars($row["titel"]); ?></a>
             <?php endforeach ?>
         <?php else:?>
             <p>Nicht vorhanden</p>
