@@ -1,20 +1,40 @@
+/*overall Styles*/
 html {
     background: #fff;
     font-family: 'Raleway', sans-serif;
 }
 
-.picture {
-    margin: 0px;
-    max-width: 100%;
-    max-height: 100%;
+button {
+    font-family: 'Raleway', sans-serif;
 }
-#textred{
-    color: red;
+
+h1 {
+    text-align: center;
+    font-family: 'Amatic SC', cursive;
 }
-.searchbox {
-    width: 350px;
-    height: 40px;
+
+h2 {
+    font-family: 'Amatic SC', cursive;
 }
+
+p {
+    color: #545454;
+    font-size: 16px;
+    font-family: 'Raleway', serif;
+}
+
+form {
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+    text-align: center;
+    color: white;
+    font-size: 16px;
+    font-family: 'Raleway', serif;
+}
+
 
 .boxRound {
     box-sizing: border-box;
@@ -22,20 +42,97 @@ html {
     background-color: #333;
 }
 
-.kontinent{
-    font-family: 'Raleway', sans-serif;
+/*end overall Styles*/
+
+/*Main Wrapper*/
+#page {
+    background: #ffffff;
+    line-height: 1.5;
+    margin: 0 auto;
+    max-width: 800px;
+    padding: 20px 4em;
+    min-width:500px;
+    min-height: 1000px;
+}
+
+#content {
+    background: #ffffff;
+    min-height: 800px;
+    padding: 1px;
+}
+/* end Main Wrapper*/
+
+/*footer*/
+
+#footer {
+    background: #333;
+    margin-bottom: 5px;
+    min-height: 50px;
+    max-height: 50px;
+    width: 100%;
+    float:left;
+    bottom: 0;
+}
+
+#footer > p {
+    color: white;
     text-align: center;
 }
 
-button {
-    font-family: 'Raleway', sans-serif;
+/*end footer*/
+
+/*menue*/
+
+#menue {
+    background: #FFF;
+    display:block;
+    overflow:auto;
+    padding: 1px;
 }
+
+#menue ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+#menue li {
+    float: left;
+    width: 25%;
+    font-size: 18px;
+}
+
+#menue li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+#menue li a:hover {
+    background-color: #111;
+}
+
+#menueLittle { display: none; }
+
+#menueicon img {
+    display: none;
+    height: 40px;
+}
+
+/* end menue*/
+
+/* Buttons*/
 
 .buttonSearch {
     float: left;
     margin: 5px;
     padding: 10px;
 }
+
 .buttonRight {
     font-size: 20px;
     font-family: 'Raleway', sans-serif;
@@ -73,112 +170,6 @@ button {
     background-color: #111;
 }
 
-#login {
-    align-content: center;
-}
-#page {
-    background: #ffffff;
-    line-height: 1.5;
-    margin: 0 auto;
-    max-width: 800px;
-    padding: 20px 4em;
-    min-width:500px;
-    min-height: 1000px;
-}
-
-#content {
-     background: #ffffff;
-     min-height: 800px;
-     padding: 1px;
- }
-#image img{
-    width: 100%;
-}
-
-#footer {
-    background: #333;
-    margin-bottom: 5px;
-    min-height: 50px;
-    max-height: 50px;
-    width: 100%;
-    float:left;
-    bottom: 0;
-}
-
-#footer > p {
-    color: white;
-    text-align: center;
-}
-
-#menue {
-    background: #FFF;
-    display:block;
-    overflow:auto;
-    padding: 1px;
-}
-
-#menue ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #333;
-}
-
-#menue li {
-    float: left;
-    width: 25%;
-    font-size: 18px;
-}
-
-#menue li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-}
-
-/* Change the link color to #111 (black) on hover */
-#menue li a:hover {
-    background-color: #111;
-}
-
-#menueLittle { display: none; }
-
-#menueicon img {
-    display: none;
-    height: 40px;
-}#containerProfilepicture {
-     border:1px solid black;
-     height: 140px;
-     width: 140px;
-     display: inline-block;
-     float: left;
- }
-
-#containerProfilepicture:hover {
-    background: #333;
-
-}
-
-#containerProfilepicture:hover  textProfilepicture {
-    color: white;
-}
-
-.textProfilepicture {
-    text-align: center;
-    margin-top: 40px;
-    margin-bottom: 40px;
-}
-
-#usernameAndPassword {
-    float: left;
-    margin-left: 90px;
-    min-height: 20px;
-    width: 150px;
-}
-
 .buttonChangePassword {
     color: white;
     background: #333;
@@ -188,67 +179,6 @@ button {
 
 .buttonChangePassword:hover {
     background: black;
-}
-
-.divExperience {
-    float: left;
-    background: #333;
-    width: 30%;
-    height: 120px;
-    text-align: center;
-    margin-left: 1.5%;
-    margin-right: 1.5%;
-    margin-bottom: 30px;
-}
-
-.divExperience:hover {
-    background: black;
-}
-
-.divExperienceText {
-    color: white;
-}
-
-.buttonsExperience {
-    width: 100%;
-    height: 100%;
-    background: transparent;
-    border-style: none;
-}
-
-#searchresults {
-    margin-top: 10px;
-    width: 100%;
-    min-height: 200px;
-    border:1px solid black;
-    padding: 3px;
-}
-
-#createNewBlog {
-    margin-top: 250px;
-    display: block;
-    min-height: 20px;
-    width: 200px;
-
-}
-
-#blogbox {
-    margin-top: 10px;
-    width: 100%;
-    min-height: 400px;
-}
-
-.form {
-    float: left;
-}
-
-.formInputFields {
-    width: 50%;
-}
-
-#blog {
-    width: 100%;
-    height: 60%;
 }
 
 #buttonCreateBlog {
@@ -281,22 +211,6 @@ button {
     background: black;
 }
 
-.uploadFileContainer {
-    width: 100%;
-}
-
-.panel-default {
-    border:1px solid black;
-    border-left: 0px;
-    border-right: 0px;
-    padding: 7px;
-}
-
-#deleteBlog {
-    width: 100%;
-    text-align: center;
-}
-
 .buttonDefault {
     color: white;
     background: #333;
@@ -317,32 +231,152 @@ input.buttonDefault {
     background: black;
 }
 
-h1 {
-    text-align: center;
-    font-family: 'Amatic SC', cursive;
+.buttonsExperience {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border-style: none;
 }
 
-h2 {
-    font-family: 'Amatic SC', cursive;
+/* end Buttons*/
+
+/*images*/
+.picture {
+    margin: 0px;
+    max-width: 100%;
+    max-height: 100%;
 }
 
-p {
-    color: #545454;
-    font-size: 16px;
-    font-family: 'Raleway', serif;
+#image img{
+    width: 100%;
 }
 
-form {
-    text-align: center;
+#containerProfilepicture {
+    border:1px solid black;
+    height: 140px;
+    width: 140px;
+    display: inline-block;
+    float: left;
 }
 
-a {
-    text-decoration: none;
-    text-align: center;
+#containerProfilepicture:hover {
+    background: #333;
+
+}
+
+#containerProfilepicture:hover  textProfilepicture {
     color: white;
-    font-size: 16px;
-    font-family: 'Raleway', serif;
 }
+
+.textProfilepicture {
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+/*end images*/
+
+/*other*/
+#textred{
+    color: red;
+}
+
+#commitView {
+    width: 100%;
+    text-align: center;
+}
+
+#login {
+    align-content: center;
+}
+
+#blog {
+    width: 100%;
+    height: 60%;
+}
+
+#createNewBlog {
+    margin-top: 250px;
+    display: block;
+    min-height: 20px;
+    width: 200px;
+}
+
+#blogbox {
+    margin-top: 10px;
+    width: 100%;
+    min-height: 400px;
+}
+
+#searchresults {
+    margin-top: 10px;
+    width: 100%;
+    min-height: 200px;
+    border:1px solid black;
+    padding: 3px;
+}
+
+.searchbox {
+    width: 350px;
+    height: 40px;
+}
+
+.kontinent{
+    font-family: 'Raleway', sans-serif;
+    text-align: center;
+}
+
+#usernameAndPassword {
+    float: left;
+    margin-left: 90px;
+    min-height: 20px;
+    width: 150px;
+}
+
+.divExperience {
+    float: left;
+    background: #333;
+    width: 30%;
+    height: 120px;
+    text-align: center;
+    margin-left: 1.5%;
+    margin-right: 1.5%;
+    margin-bottom: 30px;
+}
+
+.divExperience:hover {
+    background: black;
+}
+
+.divExperienceText {
+    color: white;
+}
+
+.form {
+    float: left;
+}
+
+.formInputFields {
+    width: 50%;
+}
+
+.uploadFileContainer {
+    width: 100%;
+}
+
+.panel-default {
+    border:1px solid black;
+    border-left: 0px;
+    border-right: 0px;
+    padding: 7px;
+}
+
+.zitat {
+    font-family: 'Amatic SC', cursive;
+    color: white;
+}
+
+/*end other*/
 
 @media screen and ( max-width: 1250px){
     #menue { display: none; }
@@ -433,7 +467,6 @@ a {
         width: 180px;
     }
 }
-
 @media screen and (max-width: 418px){
 
     div#usernameAndPassword {
@@ -450,9 +483,4 @@ a {
         min-height: 20px;
         width: 200px;
     }
-}
-
-.zitat {
-    font-family: 'Amatic SC', cursive;
-    color: white;
 }
