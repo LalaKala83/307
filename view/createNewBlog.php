@@ -32,11 +32,11 @@
                 <label for="blog" class="form">Text</label>
                 <br>
                 <textarea name="blog" class="form" id="blog"><?= $blogContent ?></textarea>
-                <label>
-                    <?php if (!empty($validationMessaage)):?>
-                        <p><?= $validationMessaage ?></p>
-                     <?php endif ?>
-                </label>
+                <div id="textred">
+                    <?php if (!empty($validationMessage)):?>
+                        <?= $validationMessage ?>
+                     <?php endif; ?>
+                </div>
             <br>
             <input type="hidden" name="id" value="<?=$blogID?>">
             <a href="/profile/profile" class="boxRound buttonDefault">Abbrechen</a>
