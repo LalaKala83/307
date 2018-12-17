@@ -12,7 +12,12 @@ class EntryRepository extends Repository
 {
     protected $tableName = 'beitrag';
 
-
+    /**
+     * Liest einen Beitrag mithilfe des Titels aus.
+     * @param $title
+     * @return array
+     * @throws Exception
+     */
     public function readByTitle($title)
     {
         // Query erstellen
@@ -42,6 +47,13 @@ class EntryRepository extends Repository
         // Den gefundenen Datensatz zurückgeben
         return $rows;
     }
+
+    /**
+     * Liest einen Datensatz mithilfe eines Tags/einer Kategorie aus.
+     * @param $continent
+     * @return array
+     * @throws Exception
+     */
     public function readByContinent($continent)
     {
         // Query erstellen

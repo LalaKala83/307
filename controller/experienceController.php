@@ -29,7 +29,9 @@ class experienceController
     }
 
     /**
-     * 
+     *Die Funktion zeigt einen bestimmten Entry an.
+     *Es wird auf die Klasse EntryRepository zugegriffen, welche
+     *Datensätze aus der Datenbank liest.
      * @throws Exception
      */
     public function show(){
@@ -53,6 +55,12 @@ class experienceController
         $view->display($_SESSION["loggedInUser"]);
     }
 
+    /**
+     * Gibt je nach Inhalt der Variable continent einen anderen
+     * String zurück.
+     * @param $continent
+     * @return string
+     */
     private function getContinent($continent){
         switch ($continent){
             case "na":
